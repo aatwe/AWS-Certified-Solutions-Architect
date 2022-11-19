@@ -1,0 +1,8 @@
+On demand: COmpare it to hotel, 
+
+Reserved: plan and stay for long and get good discounts
+
+Spot instances: People bd to stay in empty rooms.Can get kicked out at any time
+
+Dedicated host: Book entire building
+		

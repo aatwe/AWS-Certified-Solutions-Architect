@@ -1,0 +1,33 @@
+Options you need to know in EC2 isntances
+At any moment you can choose how you want your virtual machine to be :Power of cloud
+
+Linux, WIndows or MacOS
+
+
+Compute power & Cores on VM ?
+
+
+Choose RAM
+
+Choose storage space
+Network attached storage space:(EBS & EFS)
+Hardware attached storage space: (EC2 instance store)
+
+Type of network on EC2 isntance: Network card, speed of card, Public IP address
+
+Firewall Rules of EC2 isntance: Security Group
+
+Bootstrap Script(used to configure instance at first launch) :  EC2 User Data script
+
+Bootstrapping? launching commands when the machine starts
+The script is run only once when first started and then never run again
+
+what is the use of this script?
+using this script we bootstrap our instances
+We automate boot tasks using this
+what tasks? isntall update, software
+More oyu add into this script more the instance has to do at boot tim
+
+Every command we hav ehas pseudo rights.Why?
+This script runs with root user
+

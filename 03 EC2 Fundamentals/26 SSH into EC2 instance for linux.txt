@@ -1,0 +1,81 @@
+v imp function
+
+Allows you to control a remote machine/server using a terminal/CLI
+
+what do you have?
+EC2 Machine Linux 
+
+What does machine have?
+Public IP
+
+What do we want to do?
+We want to access it.
+
+What else do we have?
+Security Group with port 22 for SSH on it
+
+What will happen
+Our computer accesses over web through  port 22 and access the machine
+
+CLI will be just as if we are inside that machine
+
+
+
+1) Go to instance console: EC2 Dashoard -> Instances -> My First Instance
+//what does instance has? 
+Public DNS and Public IP
+
+How do we connect from your computer over the web to this instance?
+Public DNS and Public IP
+//check IPv4 Public IP : Copy it
+
+2) In same instance page: Check security group:click view inbound rules, what does it say? Port 22 is open on the protocol TCP
+What is source 0.0.0.0/ : what does this mean ? anyone
+
+3) Open a TERMINAL 
+** type: ss ec2 -user@35.100.100.144 //other part is the IP copied
+//what is ec2-user: : Linux user in amazon linux machine 
+@ defines IP
+
+** Yes wanna continue
+PERMISSION DENIED
+
+//cannot SSH into machine why?
+what do we know
+we launched a machine
+we it has a public IP and port 22 is open
+We dont want anyone to enter though
+
+How to control?
+Thats why key file is needed
+We need that key to get into our machine
+
+Place that key in directory : aws-course //for ex
+
+in TERMINAL
+* *ls EC2Tutorial.pem
+~/aws-courses
+*ssh - i EC2Tutorial.pem  ec2-user@35.100.100.144 
+-> Press enter
+//Another Warning : Unprotected private key file
+why this error? -> unprotected private keyfile
+when we first download the key file: permission is: 0644 : too Open : private key can leak
+Fix this?
+**chmod 0400 EC2Tutorial.pem //reference the key name
+** ssh -i EC2Tutorial.pem ec2-user@35.100.100.144
+//YOU ARE IN THE MACHINE: AMAZON LINUX 2 AMI
+
+* whoami
+ //displays ec2user
+
+example of things you can do?
+*ping google.com
+what will this give?
+Google.com will talk to us
+ping command takes input : IP address/ URL and sends Data packet to the specified address with message "PING"
+
+//NOW BASICALLY WE ARE INTO THE EC2 SERVER
+What can we do now?
+We can run commands from here
+
+How to exit connection: Ctrl+D

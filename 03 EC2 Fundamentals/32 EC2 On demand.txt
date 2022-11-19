@@ -1,0 +1,12 @@
+Pay for what you use
+
+Linux Machine
+What is the billing cycle
+Billing per second after first minute
+
+Highest cost, but no upfront payment
+No long term commitment
+
+
+Recommended for short term and un-interrupted workloads
+//i.e where you cant predict how applications will behave

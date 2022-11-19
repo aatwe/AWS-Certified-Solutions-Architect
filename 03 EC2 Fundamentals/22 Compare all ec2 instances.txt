@@ -1,0 +1,5 @@
+ec2instances.info
+ : redirects to instances.vantage.sh
+
+
+List of  all instances in AWS

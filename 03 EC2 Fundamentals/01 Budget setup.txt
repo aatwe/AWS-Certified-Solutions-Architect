@@ -1,0 +1,11 @@
+login as IAM user
+Account -> My billing dashboard
+you need permission
+
+
+
+Open different browser -> 
+login as root
+MyAccount
+IA User and Role access to Billing information
+Activate IAM Access : Update   //allows adminstrators on users to access billing information

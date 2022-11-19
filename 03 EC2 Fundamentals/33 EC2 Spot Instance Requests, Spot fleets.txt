@@ -1,0 +1,140 @@
+1)Discount of 90 %  compared to On Demand
+
+2)define max spot price
+3)get instance when current spot price < max price willing to pay
+
+Hourly spot price varies: based on offer and capacity
+
+4)When current spot price> max price willing to pay
+    : 2 options 
+	a) Stop instance(2 minute grace period) : Restart when price goes below
+	b) Spot block : Block spot instance for some time (1-6 hours)
+		You get that block for that time
+
+
+5) When used:
+Used for batch jobs, data anaylsis or workloads that are resilient to failiures
+Data analysis,
+IMage processing, 
+Any distributed workloads
+Not great for critical jobs or databases
+
+6) Spot instance pricing
+Graph: 
+price for m4.large 
+
+7) Not good for critical jobs or database
+
+8) If you dont want spot instance to be reclaimed by AWS: Use Spot block
+	you block spot instance or specified time instance
+		get block without interruption
+			Instance will not be reclaimed
+
+----------------------------------------------------------------------------------------------------------------------------
+Spot instance Pricing
+Price of m4 large instance over 3 months 
+Every availability zone has price
+Check the graphs for EC2 spot instances pricing
+
+If yellow line above crossing black dotted line then current spot price is more than max price we have defined
+	-> We will lose our spot instance
+
+If yellow goes down : we are gaining the spot instance
+
+Spot instance price is way way cheaper
+
+price graph must be seen
+
+------------------------------------------------------------------------------------------------------------------------------
+How to terminate spot instance?How do a spot request work?
+
+
+What do we define with spot request?
+	How many instances you want
+	Maximum price you are going to pay
+	Launch specifications : AMI and so on
+	Request is valid from and to? : could be infinite
+	
+	Request type: 	a) One-time request: As soon as spot instance filled, instances launched
+			b) Persistent request for post instances: Want this no. of instances to be valid as long
+			     as spot request is valid from and until
+			     If somehow your instances get stopped/ interrupted based on spot price
+			      Spot requests will go back into action, when things can be validated , we will restart
+			     spot instance for you
+
+---------------------------------------------------------------------------------------------------------------------------------------
+FLOW
+
+				--------------------------------   Start------- Stop 
+				|			             |
+				|			             |
+  Create Request  -> Spotrequest definition param  ---> Launch Instances  --> Interrupt
+------------------------------------------------------------------------------------------------------------------------------------------
+
+		Create Request
+		              |
+		         Open---------------------___________>Failed
+		              |		           \         
+		        Active		             Cancelled
+	//persistent     /	\      //one time 	  |
+		disabled    closed		  |
+		     |____________________|
+		
+
+to cancel a spot request it must be in open/active/disabled state
+It wont terminate any isntances you have launched before
+It is our responsibility to terminate these isntances , now AWS's
+
+//note terminate  is interrupt
+
+to Terminate Spot instances for good and not have them relaunched, first cancel the spot request and then terminate
+associated spot isntancces
+
+What if you terminate spot instance first?
+According to diagram of FLOW
+if you dont cancel and terminate spot instance first
+it goes back into spot request parameters column and launches desired number of instances again
+
+CANCEL and then TERMINATE
+------------------------------------------------------------------------------------------------------------------------------
+SPOT Fleets
+Ultimate way of saving money
+
+Spot fleets =  set of Spot instances + (Optional) On-Demand Instances
+
+Meets target capacity with price constraints that you defined
+
+Will define possible launch pools : instance type(m5.large) , OS, Availability zone
+We will define multiple launch pools
+Fleet will choose the best and most appropriate launch pool for you.
+
+When spot fleet reaches your budget/capacity: then it will stop launching instances
+
+
+How to allocate spot instances in spot fleet? Strategies
+1) Lowest Price: Spot fleet will launch instances from the pool that has lowest price
+	This will give you lots of cost optimization and short workload.This is a great option if you have short workload
+
+
+2) Diversified   : distributed across all pools that we have defined from before (great for availability and long workloads)
+
+i.e One pool goes away, other pool is still active
+
+3) capacityOptimized: pools with optimal capacity for the number of instances
+
+SPOT Fleet summary:
+Using spot fleet we can define multiple launch pools, multiple instance types until you are just interested in raw power
+
+
+If you use lowest price strategy for spot fleets. Spot fleets will automaticlaly request spot instances with lowest price
+for us
+
+hence advatanage of spot fleet?
+Extra savings based on spot instances
+coz smart and chooses right spot instance pool to allow us to get maximum amount of savings
+
+
+------------------------------------------------------------------------------------------------------------------
+Simple spot instance request: we know exactly the type of spot instance and AZ we want
+Spot fleet: multiple instance types and AZ and gives lowest price
+	

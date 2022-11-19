@@ -1,0 +1,7 @@
+corporate accounts usually disable public ipv4 address
+
+Open this address
+
+
+we will try connecting to this Public ipv4 address
+Cant connect 

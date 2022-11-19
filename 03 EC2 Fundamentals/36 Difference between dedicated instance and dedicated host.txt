@@ -1,0 +1,4 @@
+both allow using physical server
+
+Dedicated Host : Per host billing //access to underlying hardware //lot more
+Dedicated Instance: per instance billing  //server bound licenses available to be used on dedicated host

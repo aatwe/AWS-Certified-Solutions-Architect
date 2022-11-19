@@ -1,0 +1,22 @@
+Upto 75% Discount compared to On-demand
+
+1) Reservation period = 1 year = +discount | 3 years = +++discount'
+				    //more discount
+
+2) Purchasing options :
+		a) No Upfront|Partial Upfront  : less discount
+		b) All upfront:		   more discount
+
+3) for using, Reserve a specific instance type
+
+4) Used for steady-state usage , like a database
+
+CONVERTIBLE RESERVED INSTANCE: 
+
+Can change the EC2 isntance type
+Upto 54% discount
+
+SCHEDULED RESERVED INSTANCES:
+launch within the time window you reserve
+you want onluy for a fraction of day/month etc
+but commitment for long no. of years

@@ -1,0 +1,4 @@
+EC2 Dashboard -> Instances -> My First Instances
+
+Check instance state: running
+

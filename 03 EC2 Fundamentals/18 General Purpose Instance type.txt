@@ -1,0 +1,9 @@
+great for diversity  of workloads : for ex webservers or code repositories
+
+balance between: Compute , Memory and Networkings
+
+
+In this course
+t2.micro : free teier general purpose EC2 instance
+
+check AEWS website for general purpose instances types of family

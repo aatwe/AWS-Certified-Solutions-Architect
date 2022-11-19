@@ -1,0 +1,16 @@
+different EC2 instances
+different use cases
+different optimizations
+
+Where to find Instance types : amazon.com/ec2/instance-types (reference)
+
+Amazon EC2 -> Instance type
+
+7 different type : each instance type has families
+1) General Purpose
+2) Compute optimized 
+3) Memory optimized
+4) Accelerated computing
+5) Storage Optimized
+6) Instancce Features
+7) Measuring instance performance

@@ -1,0 +1,8 @@
+Hello world from ip-172-31-46-188 : response from IP
+//this IP address is different though, why?
+Because this is the private IP of our instance, it is not the public IP we used
+
+Check instance details : cross check pvt IPs will match
+We have started Web server on EC2 instance using the script of user data
+
+Script executed on instance first boot

@@ -1,0 +1,46 @@
+1) Connect to my EC2 instance : SSH/Instance connect etc
+
+2) Web browser CLI
+
+3) ping google.com
+/Check
+
+4) clear
+
+5)~ aws --version
+///Amazon Linux 2 AMI comes with AWS CLI
+hence installed
+
+6)~aws iam list-users
+//response: unable to look at credentials by using aws configure
+
+//COuld do -> ~aws configure & specify access key id, access key, region name and output format
+BUT BAD IDEA
+//if we enter our personal details here on this instance, anyone in our account can connect to our instance using 
+EC2 instance connect and retrieve these values
+NOT WHAT WE  WANT
+RULE OF THUMB: Never ever enter your id and access keys into an EC2 instancce
+
+Instead use IAM roles
+
+7) Search IAM -> Roles ->DemoRolesforEC2-> permissions: IAMReadOnlyAccess
+Attach this role onto our EC2 instance : to provide it with credentials
+
+8) EC2 -> instances -> Credentials
+Security -> No IAM Role currently
+
+Instance -> Actions -> Security -> Modify IAM Role
+
+DemoRoleforEC2 -> Save
+
+Check back into EC2 -> Instances -> Security: Can See DemoRoleforEC2
+
+9)~aws iam list-users
+Now will get response
+with user stephane
+
+
+//WHAT WE DID? Just attached an IAM Role  and run this command
+detach the permission from role and try: you will get access denied error again
+
+CORRECT WAY TO PROVIDE AWS Credential to EC2 INSTANCES IS VIA IAM ROLES

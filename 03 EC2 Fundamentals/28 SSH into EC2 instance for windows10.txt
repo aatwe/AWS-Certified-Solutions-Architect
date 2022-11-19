@@ -1,0 +1,43 @@
+We use SSH instead of Putty to log on to EC2 instance
+
+
+POwer shell
+~ssh
+//you get many options for usage of ssh
+//what does this mean?You have access to ssh
+//Can also do via CLI
+//if you see ssh command not found : means you dont have ssh isntalled, youll have to use putty to connect to EC2 instance
+
+
+//If you have ssh command 
+//i stands for : identity file i.e : EC2 tutorial.pem file //browse and copy location
+//ec2-user : is the user that 
+//@ means public IP : Copy your Public IPv4 : note ip changes when you restart the machine
+~ssh - i C:\Users\Stephane\Downloads\EC2Tutorial.pem ec2-user @35.180.242.162
+-> press enter -> verify the authenticity : yes
+->ERROR
+WARNING UNPROTECTED PRIVATE KEY FILE
+//we want pem file to be protected correctly and have correct permissions
+we did chmod earlier but for windows chmod does not exist
+
+-> Go To PEM file -> properties -> security -> Advanced
+Check the owner of the key //change option
+search for stephane : and check name
+This owner has to be you ->Press Ok
+
+-> remove all other user possible //because it has inheritance -
+-> Apply oK
+
+All properties of security file: you have full control
+
+try
+~ssh - i C:\Users\Stephane\Downloads\EC2Tutorial.pem ec2-user @35.180.242.162
+
+LOGGED ON TO AMAZON LINUX 2 EC2 Instance
+because you have right permissions for security
+Yes/No question was not prompted because we already told windows to trust this EC2 instance and IP
+
+
+Try the same on CLI 
+IT will work
+

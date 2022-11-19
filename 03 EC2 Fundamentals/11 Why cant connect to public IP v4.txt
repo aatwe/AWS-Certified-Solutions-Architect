@@ -1,0 +1,7 @@
+address is HTTPS 
+But we havent configured https
+This wont work : you get time out error in this case
+
+
+Solution: Copy paste the IPv4 address in new tab
+

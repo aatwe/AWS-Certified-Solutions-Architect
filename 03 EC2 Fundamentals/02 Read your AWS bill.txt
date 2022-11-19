@@ -1,0 +1,4 @@
+Home -> bills -> Month -> Check amount
+See breakdown of all service charges
+
+Dont start many EC2 instances, may get billed //charged with hours

@@ -1,0 +1,18 @@
+SSH
+Based on OS: we have different ways of SSH
+
+		SSH		Putty		EC2 Instance Connect
+
+Mac    		Can be used			Can be used	
+
+Linux		Can be used			Can be used
+
+Windows<10			Can be used	Can be used
+
+Windows >10	Can be used	Can be used	Can be used
+
+Putty: Does exact same thing as SSH
+What?
+Allows to connect to SSH protocol to connect to EC2 instances
+
+Personally in future: we will use EC2 instance connect //CLI not needed

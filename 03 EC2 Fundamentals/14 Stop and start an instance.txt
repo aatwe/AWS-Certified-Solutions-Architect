@@ -1,0 +1,9 @@
+the web page still doesnt load.Why?
+
+
+Public IPv4 changes when you start instance again.
+Pvt IPv4 will not change
+
+
+Copy paste the new Public IPv4
+see Hello world

@@ -1,0 +1,56 @@
+what is ssh?
+function that allows to control machine remotely using command line
+
+What we have?
+EC2 machine 
+What does it run: Amazon Linux 2
+What does it have :Public IP
+
+What else do we have on EC2 machine?
+We had SSH security group on it
+
+What do we do in SSH security group?
+We allow ssh on port 22 to any IP
+means: allow ssh on port 22 to any ip
+
+which?
+allows windows machine to connect to internet directly into the machine and control it using CLI
+
+1)Use PuTTy to do SSH
+2)download putty 
+3) Find Putty folder -> Putty Gen
+what is the use pf putty gen?
+We will convert the access key into putty's format  : PPK
+File -> Load Private Key (Remember to select all files while browsing)
+4) Click "Save Private Key" ->  Yes/No based on if you need a pass phrase
+5) EC2Tutorial.ppk : Save (Key is now converted from pem to ppk file)
+6) Start -> Open Putty Program
+what does program ask for?
+IP address of EC2 machine
+//copy ec2 machine public ip and paste in host name in putty
+7) Also add a hostname: ec2-user@35.180.100.144 
+8) Select instance: myEC2 instance
+-> Yes
+ERROR: NO SUPPORTED AUTHENTICATION METHOD IS AVAILABLE.
+Why this error? 
+We havenet linked the private key file(i.e ppk file)
+
+9)//Linking the private key file
+->Putty -> MyEC2 instance -> Load -> 
+currently on sessions -> go to Connections -> SSH -> Auth -> Browse pvt key file for authentication and save 
+//Dont click open yet
+go back to sessions -> Save the session for My EC2 instance
+//why? this way myec2 instance  will have the ppk file 
+-> CLICK OPEN
+//YOU ARE INSIDE THE MACHINE
+//test it out on CLI
+*whoami -> o/p : ec2 user
+
+* ping google.com ->google .com will respond and we will get information from it
+*exit
+
+-------------------------------------------------------------------------------
+Go Back to Putty
+
+MyEC2Instance -> Load the profile
+//check ssh -> auth -> pvt key file should be saved ->  you have ssh into machine

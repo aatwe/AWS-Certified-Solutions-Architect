@@ -1,0 +1,23 @@
+1) Physical server with EC2 instance capacity, fully dedicated to our use
+
+
+2) What are advantages? Dedicated hosts : 
+	a) help address compliance requirements and reduce costs
+	b) reduce costs : how? use existing server bound licenses
+
+3) Allocated to your account for a 3 year period reservation
+
+4) More expensive
+
+5) Helpful when using software with complicated licensing model (BYOL - Bring your Own License)
+//PER HOST BILLING
+---------------------------------------------------------------------------------------------------------
+
+
+Dedicated Instances
+//PER INSTNACE BILLING.
+what? instances running on hardware which is dedicated to you
+
+may share hardware with other instances under that account
+
+No Control over instance placements (can move them)

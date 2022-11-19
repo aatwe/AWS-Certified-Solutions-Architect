@@ -1,0 +1,14 @@
+advantage? great for compute intensive tasks
+what are compute intensive tasks : require high performance processors
+
+ex of compute intensive tasks:
+1) batch processing workloads
+1) media transcoding
+3) high performance webservers
+4) machine learning
+5) Gaming servers
+
+//Vgood CPU is needed
+
+//check aws site for compute optimized  ones
+named with 'c'

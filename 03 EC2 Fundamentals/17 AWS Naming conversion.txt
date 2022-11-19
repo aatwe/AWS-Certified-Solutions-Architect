@@ -1,0 +1,8 @@
+m5.2xlarge
+
+m: isntance class
+5 : generation of instance (hardware improves over time)
+	//m6 when m type of instance class
+2xlarge: size within the instance class (small -> large -> 2xlarge etc etc)
+
+more the size -> more the memory ->

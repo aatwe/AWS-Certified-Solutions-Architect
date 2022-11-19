@@ -1,0 +1,27 @@
+Elastic Compute cloud
+vpopular
+
+It is a way to do infrastructure as a service on AWS.
+
+What is infrastructure as a service
+Cloud computing service that offers essential compute, storage and networking resources on demand(pay as you go)
+Other 3 are SAAS, PaaS & serverless
+
+
+Is it CC just 1 service?
+No its componsed of many things at high level
+
+What is a ec2 instances?
+Renting 1  virtual machine = 1 instance
+
+what are virtual drives?
+EBS volumes
+
+What is ELB ?
+Distribute load across machines using elastic load balancer
+
+Scale service 
+Using ASG: Autoscaling Group
+
+
+//Must know EC2 on AWS o understand how cloud works

@@ -1,0 +1,14 @@
+budgets -> create  budget -> monthy -> recurring -> fixed monthly budget -> configure thresholds
+
+threshold  :
+can be actual or forecasted : 60% of budget amount
+
+
+//Set up notifications
+set up email receipients : Confirm my budget
+
+for each threshold (threshold1 /threshold2) : 1-1 email recipients
+
+ _-> Confirm budgets -> Create
+
+//budget is created, sets up account with more safety in future

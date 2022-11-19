@@ -1,0 +1,18 @@
+EC2 Dashboard -> Instances -> instance state tab -> Stop instance
+
+termination and stopping is different take note: termination means deletion: cannot get back to it
+In cloud everything is disposable
+v normal for you to terminate instances
+
+what to take care b4 terminating instances
+Backup the data
+
+In cloud you can decide when to run/ stop the instance
+When not using best practice to stop the instance
+
+
+Webpage will not connect
+
+-> Start the instance again
+
+But webpage still doesnt work

@@ -1,0 +1,19 @@
+What are EC2 instances? Virtual servers
+
+So far: using On Demand Instances
+
+What are On demand Instances: Instances we need for short workload and hvae predictable pricing
+
+What if you need for long time: Get cost savings 
+-> Rsesrved Instance: 1 year commitment
+3 Types of Reserved Instances
+	0)On Demand Instances
+	a) Reserved Instances	     : for long workloads
+	b) Convertible Reserved Instances: for long work load & flexible instances
+	c) Scheduled Reserve instances      : Donot need continiously for 1 year
+					for ex every thursday 3-6 pm
+	d) Spot instances 		     : Short work load,cheap,less reliable
+	e) Dedicated Server		     : Book an entire physical server, control instance placement
+
+What will exam ask? 
+Best kind of EC2 purchasing option

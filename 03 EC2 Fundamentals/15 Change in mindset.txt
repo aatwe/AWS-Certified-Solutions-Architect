@@ -1,0 +1,4 @@
+On Premise : order server -> get delivered -> plug into infrastuctures -> use them for 3-5 years
+Cloud : seconds -> Get rid anytime
+
+Hence possible to run companies with very little IT department

@@ -1,0 +1,36 @@
+EC2 Dashboard -> Security Groups
+
+What do they do?
+Control access through networking to your EC2 instances
+
+How many security groups do we have?
+1)launch-wizard
+2) default //created by default when aws account created
+
+what does each group have: security key id 
+
+What does security key id do? identify security key
+
+
+launch wizard has 3 inbound rules and 1 outbound rules
+
+what are 3 inbound rules? 
+HTTP TCP on port 80 from any source i.e source: 0.0.0.0/0
+HTTP TCP on port 8- from          source: ::/0  (anywhere in ipv6 format)
+SSH    TCP on port 22 from any source i.e source: 0.0.0.0/0
+
+What are outbound rules?
+//everything allowed on all ports from anywhere to anywhere
+All traffic,  Protocol:All , Port Range: All , Destination: 0.0..0/0
+//allows ec2 instance to get software updates, send emails 
+//conventional for outbound rules to be on
+//note there  are different groups for different ports
+//custom tcp: if you want to use your own port
+//in terms of where the traffic is coming from : Do Custom : find recommendations in terms of cinder blocks
+					Can also use just "My IP" to allow  traffic from the ip of your computer
+//you can also reference security groups in customs -> scroll down to security groups : can select/reference default security group to allow access to my instance on custom port 1234.
+//can check this later during load balancer section
+ 
+
+Note: a security group can be attached to many EC2 instances
+1 EC2 instance can have many Security groups attached to them

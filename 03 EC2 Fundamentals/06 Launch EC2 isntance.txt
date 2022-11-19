@@ -1,0 +1,54 @@
+What will it run on? Linux OS
+How? AWS Management Console
+
+A ) Search for EC2 -> Go to EC2 console //Can find EC2 Dashboard
+
+Choose a region close to you
+B  )
+EC2 Dashboard -> Instances  -> Choose an AMI (Amazon Machine Image)
+//
+Quickstart : AMIs provided by AWS  : Amazon Linux2 AMI : Free tier -> Select
+MyAMIs     :  you can also create your own AMIs
+AWS Marketplace: for AMIs
+Community AMIs
+//
+
+C ) Choose an Instance type : t2 micro : Free tier
+
+D) Provide Instance details
+1) No. of instances :1
+2)NW setting by default
+3)IAM role : none
+4) EC2 User data: what? script  launched at very first boot of instance
+//this is section for script copy and paste here
+script: ec2-user-data.sh
+//what will this script do?
+launch webserver on EC2 instance and write a file to it
+
+D) Add storage
+How much avail on EC2 instance
+everything default
+Delete on termination : check //when we terminate our instance ; delete disk
+
+E) Tags //tag to identify instance
+key value pair
+Name : My first instance  //name tag will show in instances
+Department : Finsance
+
+F) Security Group
+Create new
+Add  rule : HTTP
+port range: 80
+//Allows to access the website onto EC2 instance
+Review & Launch
+//warning group open to world
+
+-> LAUNCH
+
+When launching: select key pair
+why use key pair? to login to our instances : EC2 Tutorial
+
+Dont have any key pair hence
+Create new key pair/ Download and Save this file ..vvImp...donotlose
+
+Launchh instance

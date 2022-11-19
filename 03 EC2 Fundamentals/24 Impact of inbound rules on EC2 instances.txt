@@ -1,0 +1,25 @@
+EC2 Dashboard -> EC2 instance : Public IPv4 address : open
+//can see the hello world
+
+Now we edit the inbound rules
+How?
+Security groups -> Inbound Rules -> Edit inbound rules
+
+emove both http
+and save
+
+
+Reload the webpage : loading is happening : means? trying to access EC2 instance but no response back to it
+
+coz we have removed http rules , we are forbidding traffic to get into our ec2 instance
+
+After 30 seconds waiting for response: web browser times out 
+
+When you get a time out(ERR_TIMED_OUT): it is generally a securtiy group issue
+Endless loading circle: security group settings always check
+
+
+We add back the inbound rules with source anywhere : we get back the hello world
+The firewall is allowing the traffic to go in now
+
+

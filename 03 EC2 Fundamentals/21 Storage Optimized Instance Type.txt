@@ -1,0 +1,13 @@
+advantage? Storage-intensive tasks : high sequential read/write access to large data sets on local storage
+
+when to use?
+High frequency online transaction processing (OLTP systems)
+Relational &  NoSQL databases
+
+in memory database  cache: Redis
+
+Data warehousing applications
+
+Distributed file system
+
+start with i, d ,h1

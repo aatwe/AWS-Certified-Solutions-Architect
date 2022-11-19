@@ -1,0 +1,9 @@
+advantage? process large ddata sets in memory
+where used?
+High performance relational/ non relational database
+Distributed web scale cache stores (elastic cache)
+In memory db : optimized for Buisness Intelligence
+
+In apps: that perform real time processing of big unstrucured data
+
+'R' series : x1,high memory,z1

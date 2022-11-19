@@ -1,0 +1,22 @@
+Connect to an instance Option
+
+EC2 Instance COnnect
+1) Specify the user name   : ec2-user
+//note EC2 instance connect does not work with every type of AMIs in AWS
+			works for amazon linux 2/Ubuntu
+-> Connect
+2) This will connect automatically to EC2 instance
+What is differnce? Not using SSH key like before.Still relying on it though
+It is uploading temporary SSH key on EC2 instance for you
+
+Proof?
+Try:
+EC2 instance -> Security -> Security Groups -> Remove SSH rule -> Save
+
+Try connecting via EC2 isntance connect
+BLACKSCREEN AND TIMEOUT
+
+you need port 22 /ssh open
+
+Add Rule again: It will work again
+

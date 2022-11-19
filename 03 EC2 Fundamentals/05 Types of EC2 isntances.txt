@@ -1,0 +1,15 @@
+There are many. Few below
+//increasing below
+
+Instances		vCPU 	Mem	Nw performance
+	
+1) t2 micro	1	1	Low to mod	
+2) t2.xlarge	4	16 	Moderate
+3) c5d.4xlarge	16	32	10Gbps		attachedstorage
+4) r5.16xlarge
+5) m5.8xlarge
+
+
+Choose the isntance that best suits application.Use that on cloud on demand
+
+t2 micro is part of AWS free tier : 750 hours permonth : means running that instance continously for a month
