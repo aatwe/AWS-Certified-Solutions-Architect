@@ -1,0 +1,1 @@
+On right can see : Global service : hence does not require region selection

@@ -1,0 +1,12 @@
+In AWS find tags everywhere
+
+We use the tags to categorize resources in AWS based on the information that you want (metadata)
+
+Metadata
+a set of data that describes and gives information about other data.
+
+Key Value pairs
+
+Key		Value
+Department	Engineering
+

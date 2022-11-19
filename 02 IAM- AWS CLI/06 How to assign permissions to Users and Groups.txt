@@ -1,0 +1,5 @@
+Users and groups are assigned a Json document 
+
+Json Document = policy or IAM Policy
+
+

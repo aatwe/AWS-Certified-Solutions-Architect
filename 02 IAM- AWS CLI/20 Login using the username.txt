@@ -1,0 +1,3 @@
+CLick on the URL -> Use an alias
+
+open chrome in incognito , because the link needs whole new web browser

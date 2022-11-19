@@ -1,0 +1,27 @@
+Tool that helps to intereact with AWS services using commands from command line shell
+
+
+ex of CLI code
+
+
+~aws s3 ls s33: //ccp-mybucket
+
+How to identify if AWS cli
+because command starting with word aws : using an aws CLi
+
+Advantage of CLI?
+get direct access to public apis of aws services
+
+What is the use of CLI?
+Develop scripts to manage resources and automate some tasks
+
+Is the CLI open source?
+Yes
+
+What Open source mean?
+Can download all source code on Github
+
+Is it alternative to use AWS Management console
+Yes
+Many people do not use console, use only CLI
+

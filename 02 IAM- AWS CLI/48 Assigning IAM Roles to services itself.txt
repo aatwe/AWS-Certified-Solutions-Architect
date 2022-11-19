@@ -1,0 +1,9 @@
+Some AWS service will need to perform acctions on your behalf
+
+
+For that what do the AWS services need?
+So AWS services need permissions with IAM roles 
+
+
+These IAM roles are jsut like user but intended to be used not by  physical people.
+THey are instead used by AWS service

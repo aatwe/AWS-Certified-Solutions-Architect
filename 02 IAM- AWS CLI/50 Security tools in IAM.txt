@@ -1,0 +1,27 @@
+A) Security tool #1
+     Can create IAM credential report(account-level)
+	account level?
+		list all your account's users and status of their credentitals
+
+	How to generate credential report
+	     Dashboard -> Credential report -> Download Report (.csv file)
+		Inside CSV
+		//Report is helpful when we want to monitor users
+		1) <root account>  --- when user created---pw enabled?---when pw changed ---pw rotation next 		cycle---mfa active? ----access key generated?
+
+		2) account name stephane
+
+
+
+B) Securtiy tool #2
+   	IAM Access advisor(user level)
+	//Shows what recent services were last used
+	//Recent activity appears in 4 hours
+	How to?
+	IAM Dashboard -> Access Management -> Users -> Access Advisor
+	
+	for ex. AWS IAM was accessed today: policy granting permissions: Administrator access
+	//should remove certain permissions: if not accessed in the tracking period
+
+		shows service permissions granted to users and when they were last accessed	
+		Helps in least privelage : permissions not used can be reduced

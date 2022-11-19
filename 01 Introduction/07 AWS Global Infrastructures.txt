@@ -1,0 +1,41 @@
+Since AWS is global
+
+we can leverage our cloud infra 
+and make our app global
+
+AWS Services : Regions scoped, Ec2, Elastic Beanstalk,Lambda, Rekognition
+Check region table to know if service is avail in your region
+*Regions:
+
+US east
+US West
+Africa
+Asia Pacific  ===== CLuster of data centers
+Canada
+Europe
+Moedern East
+South America
+
+Every region has its own time
+
+How to choose AWS region for your app?
+1) Compliance: govt wants data to be local to the country
+2) CLoseness to USers(reduced latency)
+3) Not all regions have services
+4) pricing: varies region to region	
+
+
+
+In regions:
+*availability zones
+avg 3, min2 , max 6
+
+
+                x data center    y data center    z data center   
+ap-southEast: ap-Southeast-2a, ap-Southeast-2b, ap-Southeast-2c
+
+all these are isolated from disasters
+all these connected with high bandwidth ultra low latency networking
+linking all together forms a region
+
+* Points of presence(edge location)

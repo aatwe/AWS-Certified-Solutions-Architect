@@ -1,0 +1,3 @@
+Create users after this in IAM
+One User = 1 person in organization
+Users can be grouped

@@ -1,0 +1,11 @@
+
+Set permissions:
+  Add user to group
+    Create User group
+      Group name: admin
+        AdministratorAccess policy (Add administrator access policy to it) : 
+
+
+// Implies every single user in this group "admin" will have administrator access to AWS
+
+   -> Create Group

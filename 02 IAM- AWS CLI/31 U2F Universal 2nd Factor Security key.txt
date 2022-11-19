@@ -1,0 +1,10 @@
+This is a physical device
+for ex YubiKey by Yubico (3rd party company)
+
+We put this on keyfobs
+
+this supports multiple root and IAM users using single security key
+
+we dont need as many keys as user other wise night mare
+
+otherwise nightmare

@@ -1,0 +1,4 @@
+provided by Gemalto
+
+
+AWS GovCloud (US) have special key fob MFA device (Surepass id)

@@ -1,0 +1,19 @@
+Json document
+
+Version number: 2012-10-17
+
+id : identifier for policy
+
+statments //more statements
+	
+	sid: identifier for statemnt
+	efffect: //of policy whether statement allows/ denies access to certain APIs
+	Principal : account user/role to which this policy is applied to
+	
+	
+	Action: list of API calls denied or allowed based on effect
+
+	resources: list of resources to which action will be applied otto
+
+	Condition: when this policy is in effect
+

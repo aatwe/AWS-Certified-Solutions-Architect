@@ -1,0 +1,3 @@
+Dashboard -> User -> Add User
+
+User name: stephane

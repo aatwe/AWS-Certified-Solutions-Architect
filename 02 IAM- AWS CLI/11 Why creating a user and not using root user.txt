@@ -1,0 +1,9 @@
+WHen you create account on AWS : you have root user (Top right corner)
+Can work with root user also instead of IAM
+But root user has a lot of power, hence lock it down
+
+
+Only use the root user for only what is necessary
+
+
+Instead: Create administrator user

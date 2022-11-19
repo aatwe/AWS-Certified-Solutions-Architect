@@ -1,0 +1,34 @@
+THroughout the course we will be creating EC2 instance
+
+What is it?
+EC2 instance : virtual server
+
+WHat it wants to do?
+Perform actions on AWS(trying to access some information from AWS)
+
+What will it need?
+Permissions
+
+What will we give it?
+IAM Roles
+
+What do Roles do?
+Grant permissions to entities you trust (what entities? services within your account*)
+
+Common roles:
+1) EC2 Instance R0les
+2) Lambda Function Roles
+3) Roles for CloudFormation
+
+Create a Role?
+Dashboard -> Roles -> Create role -> AWS Service//there are other options as well
+
+
+common services: EC2 Services(Virtual servers), Lambda(Run Code)
+Other services     : //List of services
+
+
+Click EC2 -> 
+Search for IAM read only access permission -> tag -> enter role name -> create role
+
+role is created in roles section: click Find IAM Readonly access permission

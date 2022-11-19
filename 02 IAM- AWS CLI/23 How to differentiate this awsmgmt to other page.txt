@@ -1,0 +1,11 @@
+When signed in root account:
+top left : account id
+
+When signed in
+AWS Management console(admin) using IAM User
+top left : account alias
+
+
+Both can be used 
+for production aws account : not recommended to use root account
+use IAM users thorughtout journey on AWS

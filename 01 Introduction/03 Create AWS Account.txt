@@ -1,0 +1,6 @@
+choose account name: name_AWS
+
+take credit card: hold 1 USD ain currency as pending(3-5 days)
+identity confirmation: phone no. : verification code
+
+Basic support plan

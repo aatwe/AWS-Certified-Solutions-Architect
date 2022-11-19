@@ -1,0 +1,17 @@
+Command Line Interface Setup
+
+Google aws CLI install version 2
+what is improved: performance and capabilities
+API is SAme!
+
+Install using MSI installer: Click link -> run the installer -> Finish
+
+Command Line
+start -> cmd
+
+aws --version
+//Version no. you get' : AWS CLI is properly installed on windows
+
+
+How to update? AWS CLI
+Redownload MSI Installer, rerun the isntall

@@ -1,0 +1,14 @@
+log out of aws account
+Sign in to the console
+Use root user
+
+you will receive mFA token on device
+type in login screen
+
+
+You are connected into management consol eusing MFA
+
+MFA is set up for root account
+
+
+DONOTLOSE PHONE or MFA device

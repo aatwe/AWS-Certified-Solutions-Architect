@@ -1,0 +1,45 @@
+Json Document / IAM Policy
+
+
+In plain englishDescribes what user/group of users are allowed to do?
+
+
+For ex
+
+"Verison" : "2012-10-17",
+"Statement" :[
+    {
+         "Effect" : "Allow",
+         "Action": "ec2:Describe"   // we allow users to use ec2 service and describe on it
+         "Resource" : "*"
+
+    },
+    {
+         "Effect" : "Allow",
+         "Action": "Elasticloadbalancing:Describe"  //we allow users to use eelasticloadbalancing service and describe on it
+         "Resource" : "*"
+    },
+   { 
+          "Effect": "Allow",
+          "Action": [
+		"cloudWatch:ListMetrics",     //allow users to use cloud watch
+		"cloudWatch:GetMetricStatistics",
+		"cloudWatch:Describe",
+],
+	"Resource" : "*"
+
+   }
+ ] 
+}
+
+
+
+
+We will see what ec2 service, elastic loadbalancing , cloud watch are later
+Via this json document we are allowing users to use some services in AWS
+These policy help us define permissions of our users.
+We cant lalow everyone to do everything
+
+
+Hence we apply least privelage principle 
+Dont give more permissions than the user needs

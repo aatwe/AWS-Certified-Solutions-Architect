@@ -1,0 +1,13 @@
+dashboard -> User  -> add user
+
+
+User name: stephane
+
+Access type: AWS Management Console access
+
+Console password: **********
+
+
+Require password reset
+
+-> Next permissions

@@ -1,0 +1,64 @@
+CLoud provider/Cloud Platform
+
+provides over 200 fully featured services from data centres globally.
+ servers and services to use on demand and scale ez
+
+
+
+
+Earlier: order physical servers, install them
+
+
+AWS powers biggest websites in world: Netflix
+
+
+Advantages? Costs are becoming lower, and organizations are getting more agile
+
+
+
+What type of services are these?
+Infrastructure technologies: Compute Storage , databases
+Emerging tech	            : Machine Learning , Artifical intelligence
+IOT:
+Analytics
+
+Faster to move application on cloud
+
+
+What does cloud migration mean?
+Moving data , application ,elements on hosted service on internet.
+
+
+What are hosted service?What do they offer?
+IT things that external service provider provide
+
+
+What are types of hosted service?
+Self-,managed  or Unmanaged: External provider provides the service and OS
+	-> Customer installs application and provide ongoing engagement
+hosting service provider may provide security and backup management
+
+
+Shared service:reserves server and elements for each client, provided to multiple clients from single server
+
+
+
+
+What are some basic IT operating models
+1) Owned: org owns, mix of hardware
+2) Hosted: thierd party owns platform and data centre. 	
+	Org installs and operates applications as needed
+
+	Hosted can be -> Public cloud
+	Customer share virtual resource: Virtual machines /Cloud servers instead of physical server
+	can be -> Private cloud
+
+
+Both hosted and cloud used exchangibly
+
+3) Public cloud: third party owns platform , data centre and some part of software stack
+	IAAS:Access Pool of elastic resourcesv: On these org installs OS and other parts of software stack
+
+	PAAS: Access to platform: platform has higher dgree software stack
+	
+	SAAS:Access to hosted software envt. Org only adds change deletes users

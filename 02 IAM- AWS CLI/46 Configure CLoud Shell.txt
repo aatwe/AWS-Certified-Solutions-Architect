@@ -1,0 +1,2 @@
+
+Can configure Cloud shell from settings icon

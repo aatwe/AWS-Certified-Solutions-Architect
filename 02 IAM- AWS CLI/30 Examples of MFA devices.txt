@@ -1,0 +1,12 @@
+Google Authenticator : phone only
+Authy : multi device : multiple token support on single device
+
+
+What is multiple tokens on 1 device supports
+
+with virtual MFA device : can have access to root account, IAM user, another root account, another IAM user
+
+
+Hence very easy solution to use
+
+Another thing called Univesal 2nd Factor (U2F)  Security key

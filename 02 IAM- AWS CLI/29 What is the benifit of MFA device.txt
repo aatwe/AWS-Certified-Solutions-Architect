@@ -1,0 +1,2 @@
+if a password is stolen/hacked
+account is not compromised

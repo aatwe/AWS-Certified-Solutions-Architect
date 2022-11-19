@@ -1,0 +1,10 @@
+IAM Users -> physical users
+Users -> pw
+Users -> Grouped with other users
+permissions -> users/groups
+Create IAM Policies -> outline permissions
+AWS -> Roles for EC2 instances orAWS services
+Security -> MFA + Strong Password policy
+AWS using CLI /SDK -> generate Accesskey id and secret access key: they give programmatic access
+Audit IAM Dashboard: Create credential report to get information for all users
+Audit specific user for IAM : Use IAM access advisor to see if user is using his/her permissions

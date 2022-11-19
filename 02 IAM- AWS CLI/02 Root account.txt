@@ -1,0 +1,6 @@
+Created by default 
+root user of our  account
+Should be used only to set up the account but not anymore then
+Dont even share it
+Create users after this in IAM
+O

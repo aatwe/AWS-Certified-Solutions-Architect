@@ -1,0 +1,9 @@
+enter account id: alias
+
+-> Sign in using root user email
+        -> IAM Users
+
+         -> specify account id or account alias
+	-> Name
+	         -> Account username
+	              -> Account passwrod

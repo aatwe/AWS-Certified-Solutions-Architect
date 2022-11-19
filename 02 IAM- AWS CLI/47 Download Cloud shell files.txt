@@ -1,0 +1,17 @@
+Download/ upload file
+
+-> pwd
+//copy the path that appeared
+
+right side -> actions  -> Download File -> specify the path
+
+
+Actions -> Upload file
+
+
+Add new tabs ->
+Actions -> Split into columns
+Both terminals are connected at the same time
+
+Upload and Downoad feature of cloud shell is awesome
+CAN ALWAYS USE THE TERMINAL Instead

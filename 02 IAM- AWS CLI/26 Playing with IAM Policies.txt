@@ -1,0 +1,22 @@
+//Root
+Daashboard -> User groups
+group admin contains 1 user stephane
+
+
+//AWS management console:
+
+Search IAM 
+
+Users : stephane
+
+//Root
+now try removing stephane from admin group
+   removing from group means user will lose group permissions, because we assigned policy to the group
+
+
+//AWS management console
+Now check : 
+not authorized to list users messge
+
+
+//Can also add inline policy directly to user

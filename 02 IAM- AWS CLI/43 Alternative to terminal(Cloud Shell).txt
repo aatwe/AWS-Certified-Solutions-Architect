@@ -1,0 +1,10 @@
+Cloud shell is a terminal in the cloud of AWS(free to use)
+top rioght corner: icon
+
+Cross check cloudshell availability regions\
+
+Check FAQ s and see where where available
+
+open cloud shell
+type "aws" command
+

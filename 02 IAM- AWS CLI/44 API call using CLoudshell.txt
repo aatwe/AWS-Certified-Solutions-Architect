@@ -1,0 +1,32 @@
+when you type commandd
+aws iam list-users
+
+This returns for you an API call as if the credentials being used were the credentials of the account we are using in cloud
+right now
+Hence API calls are working
+
+~ aws iam list-users
+
+
+//will list all the users in my accounts
+//in this format
+
+{
+   "Users" : [
+         {
+             "Path": "/",
+             "Username" : "stephane",
+             "UserId" : "..."
+             Arn
+             CreateDate 
+             PasswordLastUsed
+	} 
+]
+}
+
+CAN ALSO DO THE API CALL for any kind of region
+just use --region argument
+
+~ aws iam list-users --region
+
+//Default region = region we currently logged in in Cloudshell

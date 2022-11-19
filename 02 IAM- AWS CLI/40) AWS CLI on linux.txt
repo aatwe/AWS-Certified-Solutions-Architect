@@ -1,0 +1,20 @@
+google
+version 2
+
+have to run 3 commands
+
+1) curl "$ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+//copy and paste in terminal //downloads the installer
+
+2) unzip awscliv2.zip"
+//unzip your installer
+
+3)sudo ./aws/install
+//runs installer as root , hence the sudo
+//asks for password
+
+Check by aws --version
+You get python,linux and botocore
+
+
+Now you can run any command on AWS CLI

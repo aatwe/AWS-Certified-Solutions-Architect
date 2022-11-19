@@ -1,0 +1,8 @@
+Another functionality one must know
+
+
+Whne users are administrators: they have lot of power to change configurations , delete resources  etc
+
+how to protecct root account and IAM users on top of password
+Using an MFA device
+

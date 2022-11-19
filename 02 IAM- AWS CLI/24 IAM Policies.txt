@@ -1,0 +1,7 @@
+attaching a policy at group level :
+they all inherit this policy and can access
+
+Fred : does not belong to a group
+Inline policy:  Only applies to a user
+
+if group member shares 2 groups: he/she inherits policies from both

@@ -1,0 +1,21 @@
+1) Donot use the root account except when setting up aws account
+  //you have 2 accounts root and own personal
+
+2) One AWS User = 1 physical user
+  //Create another user for friend
+
+
+3) Assign users to groups 
+     Assign permissions to groups
+
+4) Create strong password policy
+
+5) Use and enforce use of MFA(Multi factor authentication) : safer protection
+
+6) How to give permissions to AWS services? Create and use roles
+
+7) Whnen using AWS using CLI : generate access keys
+What are access keys ? just like password
+DONT SHARE IAM USERS AND ACCESS KEYS
+
+8) Use credential report to audit permissions for your account

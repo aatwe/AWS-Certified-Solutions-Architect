@@ -1,0 +1,12 @@
+Alive, Bob, Charles, David, Edward, Fred
+
+------------------------  --------------------
+    Developer	 Operations
+
+All these people in organization can be grouped
+
+Groups can contain only users not other groups
+
+Some Users do not belong to any group: not best practice but can be done in AWS
+A user can belong to multiple groups
+Charles and david can be part of both groups

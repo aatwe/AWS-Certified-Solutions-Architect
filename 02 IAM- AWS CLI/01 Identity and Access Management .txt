@@ -1,0 +1,9 @@
+what is it?
+
+Global Service
+
+What is service?
+
+
+purpose?
+Create users and assign to group

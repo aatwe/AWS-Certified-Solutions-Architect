@@ -1,0 +1,19 @@
+We have full repository in cloud shell
+i.e a place where things can be stored
+
+ls
+ 
+echo "test" > demo.txt
+//what does this do?
+
+Creates text file demo.txt with the word "test"
+
+
+Does it get stored?
+Try restarting the cloud shell
+How to restart cloud shell -> right side -> actions -> Restart AWS Cloud Shell
+
+-> ls 
+demo.txt still there
+
+Can configure Cloud shell from settings icon

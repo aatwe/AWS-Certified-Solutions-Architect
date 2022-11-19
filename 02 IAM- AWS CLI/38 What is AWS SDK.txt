@@ -1,0 +1,17 @@
+Software Development Kit
+
+For different programming language : we have an SDK
+supports different programming language
+supports mobile SDKs (Android ,iOS)
+supports IOT Device SDKs (Embedded C, Arduino)
+
+
+What is it?
+Language-specific APIs(set of libraries)
+enable you to access and manage AWS services programmatically
+
+SDK is not something you use on terminal
+It is something you embed in application that you have to code
+
+How is AWS CLI made?
+It is made of AWS SDK for python

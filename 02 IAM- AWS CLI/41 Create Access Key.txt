@@ -1,0 +1,15 @@
+Dashoboard -> Users (IAM user) -> Security Credentials -> Create access key
+
+DONOT use ROOT account to create security credentials
+
+
+When are access keys helpful : when using CLI or SDK to implement some programming language against AWS
+
+VVSECRET
+THIS IS THE ONLY TIME YOU CAN SEE ACCESS KEYS
+THEY CAN BE DOWNLOADED
+CANNOT RECOVER THEM, CAN CREATE NEWW THOUGH
+
+They can invalidated, in tutorial he invalidates later
+
+

@@ -1,0 +1,29 @@
+1) AWS Management Console: the way we saw using web interface
+	how is this protected: username and Password, multifactor authentication
+
+2) CLI Command Line interface
+	where is this? set up on the computer
+	       how is it protected? using Access keys
+	            what are access keys? Credentials that we download and which allow us to access AWS from the 				console
+
+3) SDK Software Development kit
+	When is this used? used when we want to call APIs from AWs from within application code
+	      how is it protected? access keys
+
+
+How to generate access keys?
+	Who is responsible for these access keys? Users themsleves
+	they are secret like pw. If you generate your own, do not share
+
+	treat
+	      Access Key ID : like username
+	      SecretAccess Key  : like password
+
+
+How to find Access Key?
+	Management Console -> Create access key
+
+
+
+
+	

@@ -1,0 +1,17 @@
+root account is v importatnt to protect
+coz It has full power of our accounts
+
+
+Account name -> my security credentitals -> Multi factor authentication
+
+a) Virtual MFA device   //wanna use phone
+       -> list of compatible apps for android/iphone : Authy personal fav
+       -> generate and show QR code
+
+Go to authy app -> scan this QR code
+
+you will get 2 codes on MFA
+
+type 2 MFA codes 1 & 2 below QR in window: assign to MFA 
+b) U2F security key
+c) Other hardware MFA device

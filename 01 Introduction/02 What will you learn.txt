@@ -1,0 +1,11 @@
+AWS Services
+
+Ex.
+
+Amazon EC2. Amazon ECR, AWS Lambda, Amazon Dynamo DB, Amazon SE5,AMazon RDS,Amazon Aurora, Amazon SQS, Amazon SNS, AWS Step functions,
+Amazon SE3, AWS KMS, IAM, Autoscaling, AWS Elastic Beanstalk, Amazon ECS, Amazon Cloud Watch, AWS Cloudtrail, Amazon API Gateway,
+Elastic Load balancing, Amazon Cloudfront, Amazon Kinesis, Amazon Route 53.....
+
+
+
+All these Services are linked and interconnected
