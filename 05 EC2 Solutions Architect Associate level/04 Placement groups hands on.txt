@@ -1,0 +1,44 @@
+1) Services -> Network and Security -> Placement groups -> Create placement group
+
+//Cluster
+
+2) Name of placement group : my-high-performance-group
+
+   Placement strategy : Cluster *	//we want close and high network
+				  Spread
+				  Partition
+
+//Spread
+3) Name of placement group: my-critical-group  
+
+
+4) create another placement group
+		my-critical-group
+		
+   Placement strategy : Spread		//we want distributed instances
+
+   What is spread level? rack(default) host(outposts only)
+
+
+//Cluster
+
+5) Create another placement group
+	name: my-distributed-group
+
+	strategy: Partition
+
+	Number of partiion: 4
+
+
+-----------------------------------------------------
+
+3 groups created	
+//Launch instance in group
+
+a) Launch instances
+	a.1)  Advanced details
+		a.1.1) Placement group name
+				my-critical-group
+				my-distributed-group
+				my-high-performance-group
+	 

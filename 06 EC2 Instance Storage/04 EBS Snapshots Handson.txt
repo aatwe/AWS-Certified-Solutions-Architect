@@ -1,0 +1,74 @@
+// Elastic Block Store -> Volume
+
+1) 2GB EBS GP2 vol
+	how to take snapshot
+		Actions -> Create snapshot
+		add description : Demo Snapshots
+		-> Create snapshot
+
+
+//Elastic Block Store -> Snapshots
+
+1) SELECT -> details
+	100% AVAIL
+		
+
+2)//How to copy snapshot into region?
+	right click -=> Copy snapshot -> Select AZ
+		//whhy copy snapshot to other region?
+			use case ?disaster recover strategy
+			data should be backed up in another region 
+			
+
+3) //How to take snapshot and recreate volume from it?
+//Elastic Block Store -> Snapshots
+
+a) select snapshot
+b) actions -> create volume from snapshot -> 
+	b.1) 2GB Vol
+	b.2) can be any target AZ
+	b.3) encrypt vol if want
+	b.4) add some tags
+
+	-> Create volume
+
+//Check volumes again
+//Elastic Block Store -> Volumes
+	a) Vol1
+	b) vol2	2GB	//snapshot id visible  //Availability zone
+	
+//What achieved? were able to copy EBS vol across different AZ
+
+
+4) 
+//How to check Recycle bin
+//Elastic Block Store -> Snapshots -> Recycle bin
+
+//what it does? protects snapshots and Amazon Machine Images 
+	from accidental deletion
+	
+	a) -> Create Retention rule
+		Name: Demo Retention
+		Resource type: Apply retention rule to all EBS snapshots
+		Days: 1	//retan for 1 day after deletion
+		-> Create Retention rule
+
+	b) Elastic Block Store -> Snapshots -> Recycle bin 
+		Resources
+			//no resources in Recycle bin
+
+	//Check snapshots again
+	c) select your snapshot
+		-> Actions -> Archive Snapshot (wait 24-72 hr )
+				-> Delete Snapshot
+		//snapshot is gone
+
+	//How to recovers snapshot?
+	d)Elastic Block Store -> Snapshots -> Recycle bin 
+		//Refresh
+	//Snapshot has appeared
+	select -> recover
+
+	//Check console again
+	e)Elastic Block Store -> Snapshots -> Snapshots
+	//our snapshotid is back	

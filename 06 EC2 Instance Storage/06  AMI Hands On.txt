@@ -1,0 +1,129 @@
+1)Click  Launch an instance
+
+2) Amazon Linux 2 :AWS
+
+
+
+3) instance type: t2.micro
+
+4) Key pair : EC2 tutorial
+
+
+5) Network settings -> Edit 
+	-> Select existing security grp (launch-wizard -1 )
+
+6) 8 GB : GP2
+
+7) Advanced details
+	User data:
+
+
+8) Copy below
+
+
+
+#!/bin/bash
+# Use this for your user data (script form top to bottom)
+# install httpd (Linux 2 version)
+yum update -y														//Install HTTPD : Apache Webserver
+yum install -y httpd
+systemcl start httpd
+systemcl enable httpd
+echo "<h1>Hello World from $(hostname -f)</h1>" >  /var/www/html/index.html			//Create index file //skip this line // we dont want to create index file
+
+
+-> Launch instance
+
+//Instance is launched
+
+
+----------------------------------------------------------------------------
+What will happen?
+install will launch, instance will run through EC2 user script , Installs Apache webserver
+//instance state: running
+	
+	//wait for some time
+		why give time? EC2 user data script -> running first time
+
+-> Open public IPv4 : 52.209.79.60
+
+
+
+==> See test page from Apache web server
+-------------------------------------------------------------------------------------------
+//How to create AMI?
+
+	What objective: save the state of EC2 instance -> reuse it
+
+a) right click on EC2 instance -> Image and Templates -> Create an Image
+
+
+Image Name:  DemoImage 		//Our own AMI
+
+default settings
+
+-> Create iMage
+
+//Ami Created
+
+----------------------------------------------------------------------------------------------
+
+How to check our AMI?
+
+a) Serviecs -> Images -> AMIs
+
+	DemoImage		//pending 	//AMI being created  --> //available 
+
+//AMI Created
+----------------------------------------------------------------------------------------------
+Launch Instances from AMI
+
+a) AMI -> Launch instance from AMI
+OR
+   Instances -> Launch instances -> Name: From AMI 
+		-> Instead of Amazon Linux -> Select My AMI
+					-> Owned by Me
+
+		-> Choose demoiMage
+
+
+b)	Key-pair
+
+c) Select existing security grp
+
+
+d) User data
+			//will not re-install HTTPD  , since AMI already contains HTTPD
+				What advantage://instead we will speed up in boot up time
+
+#!/bin/bash
+# Use this for your user data (script form top to bottom)
+# install httpd (Linux 2 version)
+echo "<h1>Hello World from $(hostname -f)</h1>" >  /var/www/html/index.html	
+
+
+
+e) Launch an instance
+	-> click instance
+	
+	//instance is fully created
+	//instance from AMI is running
+
+
+f) Open IPv4
+	34.242.212.81
+
+>Hello World from ip-172-31-32-19.eu-west-1.compute.internal
+
+	//was quicker
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Why was this magical? this could have been an entire security software
+
+you can package it as AMi  -> start as AMI -> faster
+
+
+
+//Note: terminate instances in end :)

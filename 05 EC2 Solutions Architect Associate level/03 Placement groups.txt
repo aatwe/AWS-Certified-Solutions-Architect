@@ -1,0 +1,114 @@
+How to control, how EC2 instances are placed in AWS?
+	EC2 Instance placement strategy
+
+1) Create placement group
+
+2) 3 strategies:
+
+	2.1) cluster 				//instances clustered in low latency group
+							//What is low latency group? hardware setup
+							//where is group? single availability zone
+							//use case: high performance, high risk
+
+
+
+			2.1.2) All EC2 instance in same rack/Hardware  and same avaialbility zone	
+			2.1.3)
+				-----------------------------
+				|	EC2 --- EC2 --- EC2	|
+				|	 | \  / |	\  /	|	|
+				|	EC2 --- EC2 --- EC2	|	
+				----------------------------//same rack/hw
+			
+
+			2.1.4) What advantage of cluster?
+					a) super low latency
+					b)  10 GBps  //great network
+					
+				  What con?
+					a) If rack fail --> all ec2 instance fail --> high risk
+
+				
+				  Use case: Big data job
+						 low latency, high network throughput job
+
+
+
+		
+	2.2) Spread				//instances spread across hardwares
+							// 7 EC2 instance per placement group per AZ			//what is az? availabilitiy zone
+								//what is az?
+							//Use case: Critical applications
+							//one spread not isolated from another
+
+
+
+
+			2.2.1) minimized risk
+					//6 EC2 instance on 3 AZ
+			US-east-1a			 US-east-tb		US-east-1c
+			  AZ1				   AZ2			   AZ3
+
+			| hw1		|		| hw3		|		| hw5		|
+			|   ec2	|		|  ec2 	|		|  ec2	|
+			| hw2		|		| hw4		|		| hw6		|
+			|   ec2	|		|  ec2	|		|  ec2 	|
+	
+
+			how risk minimized?
+				a) if HW1 fails, hw2 wont fail
+			
+			What disadvantage?
+				limit to placement group
+				limited to 7 instances per az per instance group *
+
+			Use case: 
+				application avg size
+				high availability applications, reduce risk
+				critical applications -> isolate instance failiure
+	
+
+
+	2.3) Partition				//similar to spread
+							//spread across partitions	
+								//What are partitions? set of racks of hardware within AZ
+								//What rack means?hardware ==>
+									 one partiiton isolated from another
+									//What advantage? can scale 100s of EC2 instance per group		
+										//can run apps like hadoop,Cassandra,Kafka
+							
+
+
+			2.3.1) Instances	across partition
+					//What is partition? rack	in aws
+						limit: 7 partitions per az
+			
+
+				us-east-1a					  us-east-1b
+			 		AZ1						AZ2
+
+			|					|		|		  |
+			|partition1  partition 2	|		| partition3 |	
+			|  ec2		ec2		|		|	ec2	  |	
+			|  ec2		ec2		|		|	ec2	  |
+			|  ec2		ec2		|		|	ec2	  |
+			|  ec2		ec2		|		|	ec2	  |
+
+
+			2.3.2) Partition across multiple AZ in same region
+			2.3.3) 100s of EC2 instances with a setup	//cant in spread
+			2.3.4) instances and partition dont share same hardware physical rack
+			2.3.5) each partition is isolated from failiure
+						//if partition 2 goes down -> partition 1 is fine
+
+
+			2.3.6) how to find which partition is a particular ec2 instance on? metadata service
+
+
+			Use case:
+				Application : partition aware applicaitoin
+							 to distribute data & server across partitions
+
+				Big data applications, partition aware
+					//HDFS //Hbase //Cassandra //Apache kafka
+					

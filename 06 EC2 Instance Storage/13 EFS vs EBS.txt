@@ -1,0 +1,77 @@
+a)  EBS Volumes
+		a.1) can attach to only 1 instance at a time
+		a.2) EBS locked into specific AZ
+	
+				AZ1			AZ2
+				 EC2			 EC2
+				   EBS					//1 EBS attached to 1 AZ at a time
+
+
+		ex
+			gp2 -- IO increase as disk size increase
+
+
+			io1 -- increase IO independently from vol size
+				//usecaserunning critical database
+
+
+
+		Q) How to  migrate EBS across different AZ?
+				take snapshots
+				restore snapshot into another AZ
+				new EBS volume created in respective AZ
+
+
+				//Note : EBS backups use IO
+						dont run them while application is handling a lot of traffic
+						//backup only when instance not aactively 	using EBS volumes
+							//else performance issues
+
+	
+		Q) what if EC2 instance terminated? root EBS termiantes by default
+				how to disable?	//check EBS notes
+		
+		a.3)  provision in advance for size we know for EBS drive
+				what we pay for? provisioned capacity // not actual use capacity
+
+		a.4) basically EBS is for network volume, can mount on only 1 instance
+				EBS is locked to an AZ
+
+b) EFS Volumes
+
+		a.1) Elastic files system
+		a.2) can be mounted to many instances across AZs
+				
+				AZ1		AZ2
+				 Linux	 Linux
+				  EC2#1	   EC2#2
+				
+				  mounttrgt1  mount trgt2
+					 \      /
+					   EFS
+
+		a.3) how to link EC21 instances to EFS drive? mount targets
+
+
+		a.4) EFS use case? share website files
+						wordpress
+		a.5) Which instances compatible for EFS? Linux Instances (POSIX)
+					//does not work for windows
+
+
+		a.6) Is EFS more expensive  than EBS? yes   EFS Price = 3x EBS
+
+				how to do cost saving?
+					Use EFS Infrequent access as a storage tier  	//how to use? lifecycle policy
+
+		a.7) billing only for pay per view	(only what storage u use, u get billed for
+	
+		a.8) basically: EFS is for network file system that we can mount across multiple isntances
+
+
+
+c) Instance Store:
+		c.1) get maximum amount of IO onto an EC2 instance
+		c.2) ephemeral drive
+
+		

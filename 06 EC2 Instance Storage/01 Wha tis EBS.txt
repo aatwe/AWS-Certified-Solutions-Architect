@@ -1,0 +1,69 @@
+Problem: how instance can persist data even after termination?
+
+
+EBS volume : network drive  //block level storage
+		//like USB Sticks 
+
+	
+	
+How to use? attach to instances while they run
+
+solution: instance can presist data even after they are terminated
+
+For CCP level: can attach to 	one isntance at a time
+
+For associate(sol/archi/dev/sysops) : multi attach feature for some ebs
+
+bound to a AZ
+
+
+
+How much storage? 30GB General purpose(SSD) / Magnetic
+
+
+What feature? can deattach and attach v quickly for failover
+
+
+Where locked? special AZ	 
+	us-east-1a cannot be attached to us-east-1b
+	//can move across AZ after snapshotting
+
+Need to have provisioned capacity
+			(G.Bs and IOPS)
+		//billed for what? that provisioned capacity
+		//can increase capacity over time
+
+
+Q) Can we have 2 EBs volume attached to 1 instance
+
+Q) Can we have unattached EBS vol? yes
+
+Q) What for other AZ? create new
+
+Ex
+
+
+	AZ1
+	  EC2-instance#1		EC2-instance#2
+		EBS Vol#1(10GB)		EBS Vol#2(10GB)	EBS Vol#3(10GB)
+
+
+
+
+
+Q) WHat is delete ont ermination attribute?
+	encountered while creating EBS vol
+		-> while creating EC2 instance
+			delete on termination button
+		What it does??
+			//ticked for EBS root vol
+			//unticked for new EBS
+
+		What it does?
+			controls EBS behaviour, when a EC2 instance is terminated
+
+		if ticket -> root also deleted with instance when instance deleted
+		//any other //not ticked // any other attached is not delted
+
+
+	What use case? preserve root volume when instance deleted

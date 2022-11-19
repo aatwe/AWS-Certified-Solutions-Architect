@@ -1,0 +1,116 @@
+6 types of EBS volumes
+
+a)  gp2/gp3
+		general purpose ssd volume
+		balance price - performance for wide variety of workloads  //we using so far
+
+b) io1/io2
+		high performance ssd
+		mission critical: low latency - high throughput workloads
+
+c) st1 (HDD) 
+		Low cost HDD
+		frequently accessed throughput intensive workloads
+
+d) sc1 (HDD) Lowest cost HDD vol 
+		for less frequently accessed workloads 
+
+Defining EBES Volume
+
+a) Size
+b) throughputs
+c) IOPS
+		//AWS Documentation
+
+
+ 
+*only gp2/gp3 and io1/io2 can be used for boot volumes
+								where root os is running
+----------------------------------------------------------------------------------------
+Exam 2 Types of Volumes
+
+1) gp2:
+
+a) cost effective storage , low latnecy
+
+b) use for system boot volumes	
+		Virtual Desktop
+		Test environment
+
+c) Size: 1gb to 16 TB
+
+d) IOPS 3,000
+   size of vol - maxIOPS //LINKED	3 IOPS per GB 	i.e 5,334 GB -->  max IOPS
+
+2) gp3:
+a) baseline 3000 IOPS , through put 125 MBps
+			-> IOPS can increase upto 16000
+					-> increase throughput upto 1000MBps   //INDEPENDENTLY
+
+
+---------------------------------------------------------------------------------------
+Another type of Volume
+3) Provisioned IOPS (PIOPS)
+
+a) Critical business application --> need sustained IOPS performance
+
+
+b) App with >16000 IOPS
+
+What use case ex
+	Database workload : Sensitive to storage perfomance and consistency
+
+	Use io1/io2 instead of gp1/gp2 volume
+
+
+c) 4 - 16 TB
+Max IOPS? 
+	If Nitro -> For Nitro EC2 instances  16000  IOPS
+						//gives access to higher level of IOPS
+
+	If no nitro- > 30k , 32k IOPS
+
+d) Can we increase PIOPS from storage size INDEPENDENTLY ? Yes
+
+e) why use io2? more durability , more IOPS per GB //same price as IO1
+
+
+----------------------------------------------------------------------------------------
+4) Provisioned IOPS
+	io2 Block Express ( 4GB - 64 GB)
+
+a) Even higher performance
+
+b) sub millisecond latency
+
+c) 256,000 IOPS max
+
+d) IOPS/GB ratio = 1000/1
+
+e) supports EBS multi attach
+
+
+----------------------------------------------------------------------------------------
+
+5) Hard Disk Drives
+	st1/ sc1
+
+a) cannot be a boot volume
+
+b) Size upto 16 TB
+
+2 kinds of volumes
+	Throughput Optimized HDD (st1)
+			Use case: Big Data, Data Warehouses, Log Processing
+			max throughput : 500 MB/s , max IOPS 500
+
+	Cold HDD			   (sc1)
+			Use case: archive data: infrequently accesed
+				    when want lowest possible cost
+			max throughput : 250 MB/s , max IOPS 250
+	
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/provisioned-iops.html
+
+
+What if we want >32000 IOPS : Ec2 nitro with IO1 / IO2

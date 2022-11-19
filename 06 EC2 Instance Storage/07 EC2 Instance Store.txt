@@ -1,0 +1,51 @@
+1) What we know? how to attach network drive to EC2 instances
+
+
+2) what problem? network drive has limited performances
+
+	solution for high performance? Hardware disk
+
+
+3) what we know about EC2 instance ? Virtual machine, attached to some real hardware server
+		These hardware servers may have actual disk space
+
+Solution: EC2 instance store
+	//what is it? the name of hardware to which hard drive is attached to physical server
+
+ //what features?
+	a) better IO performance
+	b) good throughput
+			how fast can read/write data  (MB/s)
+
+  What caveat?
+	a) if stop EC2 instance with instance store? 
+		instance  store -> storage lost
+
+		//Called as Ephemeral storage (not good long term)
+
+
+  What use case?
+	a) Buffer/cache/scratch data/temporary content
+		//great place
+
+		what good for long term? EBS
+
+	b) Backup and replicate our responsibility
+			hardware may fail
+
+	
+
+Ex
+
+Instance size of			100% Random read IOS		Write IOPS
+
+i3.large				100,125				35000
+i3.xlarge				206,250				70,000
+i3.2xlarge
+...
+i3.16xlarge			3.3 million			1.4 million
+
+EBS vol : reaches 32k IOPS
+these reach millions
+
+local EC2 Instance store : high performance

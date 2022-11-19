@@ -1,0 +1,35 @@
+What is EBS snapshot? backup at any time in EBS volume
+
+Can we take snapshot without detaching EBS volume? Yes but recommended to detach
+
+What feature? 
+
+1) can copy them across AZ / region
+
+a) AZ1: US-EAST-1A
+		EC2 instance
+			EBS(50GB) --> take snapshot
+
+
+b) AZ2 : US-AST-1B
+		EC2 instance	
+			//restore here in different AZ
+
+
+2) EBS Snapshot Archive
+		Moves snapshot to archive tier
+			what feature of archive tier? 75% cheaper
+			what con? takes 24 to 72 hours to restore archive
+
+
+3) What if we delete EBS Snapshot?
+	instead of permenently deleting
+		-> they land in recycle bin
+			//can recover if delete them accidently
+				//What retention of recycle bin? 1day - 1year  //can be set	
+
+4) Fast Snapshot Restore
+		What it does? snapshot full restore
+			what is full restore? no latency on first use
+				when useful? really big snapshot, have to initliaize very quickly
+					costs lot

@@ -1,0 +1,15 @@
+ALlow us to purchase a specific reserved instance of specific type
+
+For ex C5.large
+
+
+Different Offerings
+Standard/Convertible Instance
+Choose payment options
+choose how many you want
+you can add this reserved instance to your cart
+
+
+RESERVED INSTANCES WILL SOON GO AWAY AS AWS SAVINGS PLAN
+
+IS RECOMMENDED

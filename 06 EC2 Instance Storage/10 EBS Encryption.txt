@@ -1,0 +1,95 @@
+How to encrypt EBS volume?
+
+1) what is encrypted using EBS encryption?
+	a) all data at rest
+	b) all data in flight bw instance and vol
+	c) all snapshots
+	d) all volumes created from snapshot
+	//all done behind the scene //transperent to us
+
+
+2) minimal impact on latency
+	does encryption affect latency? no
+
+3) 	fact: leverages keys from KMS (AES-256)
+		what is KMS? AWS KMS : lets us create,manage,control
+			cryyptographic keys across applications + 100 AWS services
+
+Q) what if we copy unencrypted snapshot --> encryption enabled	//how encryption is enabled
+Q) What if we snapshot an encrypted volume --> snapshot also encrypted
+
+//How to encrypt a unencrypted EBS volume?
+a) create EBS snapshot of unencrypted vol
+
+b) Use Copy function : Encrypt the unencrypted snapshot
+
+c) create new EBS volume from the encrypted snapshot
+
+d) volume gets encrypted
+
+e) attach encrypted volume to original instance
+
+--------------Hands On------------------------------
+
+a) Elastic Block Store -> Volumes -> Create Volume
+
+b) vol type: gp2
+   size    : 1GB
+   az 	: eu-west-1a
+   encryption : encrypt this vol : unchecked
+ 
+
+-> Create volume 
+//check volume -> details:
+
+	Encryption not encrypted
+
+c) 
+//How to encrypt this volume? Create snapshot from volume
+	 Select volume -> Actions -> Create snapshot 
+	
+	Check snapshot details : Encryption not encrypted
+
+d) select snapshot -> Actions- > Copy snapshot
+
+	Select : Encrypt this snapshot
+
+	KMS key: aws/ebs
+
+	-> Copy Snapshot
+
+
+e) check copied snapshot details:
+	
+	select action -> Create volume from snapshot
+
+	1GB
+	//encryption: auto enabled for this volume
+
+	-> Create volume
+
+f) CHeck volume
+	Services -> Elastic Block Store -> Volume
+
+		//newly created volume
+		//Details:
+		
+		Volume state: available 
+		Encryption: Encrypted
+
+
+
+
+Note: Shortcut:
+1) select unencrypted snapshot -> encryption: not encrypted
+		-> Actions -> Create volume from snapshot -> encrypt this volume 
+		
+		-> Select EBS key
+
+		-> Create volume
+
+------------------------------------------
+Actions -> Delete snapshot
+//Delete snapshot after use
+Actions -> Delete volume
+//after use

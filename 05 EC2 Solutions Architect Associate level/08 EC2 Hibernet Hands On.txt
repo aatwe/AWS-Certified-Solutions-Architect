@@ -1,0 +1,83 @@
+//How to launch an instance
+
+a) Amazon Linux Machine: Amazon Linux 2 AMI
+
+b) instance type: t2.micro
+
+c) Key Pair: EC2 Tutorial 
+
+d) network Settings edit:
+	d.1) Select existing Security group
+			launch-wizard-1
+
+e) Advanced details:
+	Stop hibernate Behaviour -> Enable
+		//what it does? enable hibernation on EC2 instance
+	//if enable hibernation 
+		//make sure  root volume has enough storage to fit RAM
+		of EC2 instance
+		++ Root EBS volume -> should be encrypted
+	
+//Setup EBS volume
+f) Storage -> Advanced -> Choose EBS volume -> Yes  encrypt
+	-> Choose default AWS key to encrypt
+	//EBS Volume is set up
+
+
+g) Storage:
+	Size: 8GB volume
+	//how to know if enough?
+		check instance type: t2.micro
+			//1 GB ram
+
+	//1 GB ram fits on disk  -> good enough
+
+
+----> Launch Instances
+
+---------Instance is created  ++ Hibernation enabled------------------- 
+						//hibernation also enabled
+
+---------Testing hibernation--------------------------
+
+a) connect ot instance
+	Services -> Instances -> Connect -> EC2 Instance Connect -> Connect
+
+	
+//Connected to instance in new tab
+
+
+//How to check how long instance running since restart? command uptime
+
+uptime
+	//0minutes
+	//wait
+
+uptime
+	//1 minute	
+
+
+b) Disconnect instance(close the instance window)
+
+Instance state --> Hibernate instance
+
+//What this will do?
+//makes sure all data in RAM --> is stored on EBS volume
+
+
+//wait
+//instance stopped
+
+c) start instance again 
+	//how to check if it was hibernated? uptime should not be 0
+
+
+d)  connect ot instance
+	Services -> Instances -> Connect -> EC2 Instance Connect -> Connect
+
+e) uptime
+	//4minutes		//OS perspective instance didnt stop
+
+f) Instances -> Instance state -> Terminate instance	
+
+

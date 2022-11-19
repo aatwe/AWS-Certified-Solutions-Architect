@@ -1,0 +1,59 @@
+1) What is AMI?
+	Amazon Machine Images
+
+
+2) Wha it does?
+	Powers our EC2 instances (launches our EC2 instances)
+	customizable
+
+	2.1) In our AMI , Can setup our own OS
+	2.2) In our AMI Can setup monitoring tool	
+	2.3) if create our AMI, faster boot time + configuration time
+		//why fast?all software we want on EC2 instance
+			-> prepackaged through AMI
+
+
+3) How to build AMI?
+		//built for specific region + copied across region
+
+4) How to launch our EC2 instance from different EMI
+
+a) Public AMI (AWS Provided)
+	a.1) Amazon Linus 2 AMI
+
+
+b) Create our own AMI
+	b.1) have to maintain ourselves (tools to automate maintenance)
+
+c) AWS Marketplace AMI
+	c.1) Someone wlse made this AMI (sold on marketplace)
+
+	c.2) who sells them? there are vendors on AWS
+			vendors create their own AMI
+			vendors sell on marketplace
+
+	c.3) Business opportunity: Selling AMIs on AWS marketplace  
+
+
+AMI Process
+
+a) Start EC2 instance
+
+b) Customize EC2 instance
+
+c) Stop EC2 instance	 //makes sure data integrity is correct
+				(accuracy,completeness and conssitency)
+
+
+d) Build AMI from EC2 instance
+	//EBS Snapshot created behind the scene
+
+e) Launch instance from other AMI
+
+
+Ex
+Launch in  	--> Customize Instance / Create AMI ---> 	Launch in
+AZ1 US-EAST-1A									AZ1 US-EAST-1B
+	Instance									Launch instance from AMI
+
+Objective ? Copy created of our EC2 instance

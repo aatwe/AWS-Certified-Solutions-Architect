@@ -1,0 +1,76 @@
+EC2 Dashboard -> Spot Request -> Check Pricing History
+
+Pricing History //for our EC2 instances
+
+Search for Instance type : c4.large and data range of 3 months
+
+See how price has evolved over time
+Black bar: On Demand price
+Other bars:  Based on different AC
+
+Savings of 69 to 70%
+
+How to request Spot instance?
+1) EC2 Dashboard -> Spot Requests -> Request Spot instances
+
+2) Specify Different work loads to AWS for recommendationss
+   a) Load Balance Workload : For running web applications
+   b) Flexible Workload            : FOr running batch jobs
+   c) Big Data Workload            : Big Data workload for doing Map Reduce Jobs
+   d) Defined duration workloads : Spot block(1hr - 6hr) //to make sure spot instance is not terminated during this time
+
+
+3) Configure your Instances
+	Create Launch Template : Same thing we see in auto scaling groups
+	    //This specifies how instance will be launched
+		Select any one -> Choose a version
+	
+	OR
+
+		      Specify all the options which have AMI & minimum compute unit 
+	
+					      -> as specs or as instance type
+	Network
+	Availability zone
+	Key Pair name
+	Total Target Capacity : for ex 6 instances we want to be running the spot fleets
+			//can be Instances / Vcpus
+
+	Maintain Target capacity for replacing interrupted Spot Instances
+	....
+
+4)Fleet Request Settings
+A Fleet request is Specified to you -> Select and launcha varied type of EC2 instances from what i want
+c3.large
+t3.large
+m3.large...
+This Fleet will be rated: Strong
+
+Can we choose our own EC2 instance type though?
+Yes
+APPLY THESE RECOMMENDATIONS
+
+//asks if you want roll
+
+5) CHeck your total fleet capacity at the end : 24vCPUs
+     Check Fleet Strength : different instance pools : 6 instance type x 3 availability zones = 18 instance pulls
+     Check estimated price : gives 70% saving compared to On demand
+
+6) How to launch just 1 instance in Spot mode
+    INstances -> Launch Instance -> Select AMazon Linux2 -> Select T2 micro -> Request Spot instance
+								Configure Instance details
+			
+							             (This gives current price for t2 micro)
+							           //Feed maximum price we are willing
+							 	to pay for 1 EC2 instance (0.006) 
+							//As long as EC2 instance has price< this
+							We are good to go
+						
+-> Persisten request : Is what happens when spot instance is terminated
+			-> Interruption behaviour : Stop(Instead of terminating) / Hibernate(preserve memory)
+
+
+
+
+
+	

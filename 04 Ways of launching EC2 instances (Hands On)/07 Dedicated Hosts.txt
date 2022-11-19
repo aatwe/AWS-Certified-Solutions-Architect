@@ -1,0 +1,22 @@
+//COSTS LOT OF MONEY
+
+is to launch a host that you get access to a lower level, kind of hardware
+
+If click -> directs to license manager 
+Why?
+Better licensing pricing
+
+What is license manager?
+Its a way to think in terms of licenses and not in terms of hosts
+//Simplifies management of dedicated hosts
+
+
+How to launch dedicated host directly fromUI?
+
+Allocate dedicated host button -> Specify Instance Family
+			   SPecify Availability Zone
+
+	On this dedicated host you can launch multiple instance type
+
+More settings -> Ok
+

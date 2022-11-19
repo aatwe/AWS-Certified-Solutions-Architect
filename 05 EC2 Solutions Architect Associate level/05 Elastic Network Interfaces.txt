@@ -1,0 +1,72 @@
+ENI(..)
+
+
+
+1) what are ENI? logical component in VPC (virtual pvt clouds)
+				a virtual network card
+
+
+2) what is a network card?
+	gives access to network
+
+
+3) how ec2 instance access network? virtual network card
+		//also used outside ec2 instance
+
+4) AZ
+	EC2-instance #1
+	    eth0 - Primary (ENI) #1
+			192.168.0.31		//provides instance with nw connectivity + pvt IP
+			//pvt ipv4
+ 
+	    eth1 - Secondary (ENI) #1
+			192.168.0.42		//can add secondary ENI
+			//pvt ipv4
+
+
+
+	EC2-Instance #2
+	    eth0 - Primary (ENI) #2
+	
+
+Each AZ can have 2 ENI(2 primary pvt IPv4)
+
+Each ENI can have 1 elastic IPv4 per private IPv4
+	ENI
+		private IPv4
+		  elastic IPv4
+		public IPv4
+
+
+5) >=1 security groups to an ENI
+
+6) Mac address attached to ENI
+
+7) Are ENI bounded to AZ? yes
+
+8) Can we move ENI inside AZ and attach on fly?
+	Yes can move eni independently, attach them on fly		
+
+	Can move	 eth1 - Secondary (ENI) #1 from EC2-Instance #1 ----> to EC2-Instance #2
+	//pvt ip will also move
+
+looks like below:
+		
+		//When helpful?  can move ip around instances for failover purposes
+
+   AZ
+	EC2-instance #1
+	    eth0 - Primary (ENI) #1
+			192.168.0.31		//provides instance with nw connectivity + pvt IP
+			//pvt ipv4
+ 
+
+
+
+	EC2-Instance #2
+	    eth0 - Primary (ENI) #3
+
+
+	    eth1 - Secondary (ENI) #1
+			192.168.0.42		//can add secondary ENI
+			//pvt ipv4

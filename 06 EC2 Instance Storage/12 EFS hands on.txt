@@ -1,0 +1,281 @@
+A) Create FILE SYStem
+
+
+1) Aws -> services
+	Search -> EFS 
+	  -> Create File System
+
+2) Name:
+   Virtual Private Cloud (VPC)
+
+   Availability and durability : Standard
+
+   -> Customize -> File System settings
+
+
+3) File System settings:
+	a) Name
+
+	b) Availability and durablity
+		Regional:	//across multiple AZ
+				//production setup
+
+		One Zone: 	redundantly stored within single AZ
+			what con? if AZ down, file system down
+
+
+	c) Automated Backup
+		Enable / Disable
+
+	d) Lifecycle managment: automatically achieves right price / blend for application
+			moves files bw standard and standard infrequent access storage classes
+
+		d.1) if objects not used often -> trainsition them to different access tier (Standard Infrequent Access Storage class)
+
+		d.2) if file not accessed for 30 days -> transition to IA
+	
+		//autobackups	
+		d.3) transition out of IA : 
+					on first access
+					or never
+
+		//Performance mode
+		d.4) 
+			d.4.1) General Purpose : latnency sensitive use cases
+					ex webserivng, content mgmt
+					ex wordpress + need  storage -> General Purpose
+		     d.4.2) Max I/O : high throughput and IOPS
+					ex big data use case,
+						con? high latency
+
+
+		//Throughput mode
+
+		d.5) 
+			d.5.1) Bursting: 		//throughput scales with file system size ( if big file system -> more throughput)
+			d.5.2) Provisioned		//fixed throughput
+									//value between 1 to 1024 MBps
+								//helpful when tiny file system	
+								//what con? not useful if needs lots of throughputs
+
+		d.6) Encryption of data at rest //tick
+	
+
+		--> Next
+
+
+4) Network Access:
+		a) Choose default VPC
+
+		b) mount targets
+			what is mount target?provides endpoint.
+							what use of this endpoint? can mount Amazon EFS filesystem at it
+									why mount? see later we use in cmd as endpoint
+										mount specs? 1 mount target per AZ
+
+
+		ex
+		AZ1 --> Subnet ID ---> IP address --> Security groups
+														
+		AZ2 --> Subnet ID --> IP Address --> Security groups
+
+		AZ2 --> Subnet ID --> IP Address --> Security groups
+
+		
+		we have to create specific EC2 for file system
+		EC2 console
+			Security groups
+				Create security group
+					efs-demo		//cant start with sg
+					
+					Description: EFS Demo SG
+
+
+				no inbound rules
+
+
+					==> Create security groups
+					//EFS Demo created successfully
+
+
+		//Use in mount target -> refresh
+		AZ1 --> Subnet ID ---> IP address --> Security groups
+									  choose your security groups
+														
+		AZ2 --> Subnet ID --> IP Address --> Security groups
+
+		AZ2 --> Subnet ID --> IP Address --> Security groups
+
+
+
+	=> Next
+
+
+5) File System Policy - optional		///advanced
+
+
+6) Review and create	//all file system settings
+	File system policy
+	
+	-> Create
+
+//File System is creating
+//File System is created
+
+
+------------------------------------------------------------------------------
+
+Amazon EFS - File Systems - fs-03...
+
+	Metered Size: 6 KB		//this is the only size used rn	//paying only for the storage we use
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+B) 	How to mount this created EFS on EC3 instance
+
+  B.1) launch instance a
+
+	1) Create EC2 Instances -> instances -> launch instances
+
+	2) Launch an instance
+		amazon linux
+		instance type: t2.micro
+
+		disable key pair
+		
+	3) Network settings
+			//new security group will be created
+	
+	//Allow SSH access from anywhere
+
+	4) Configure Storage
+		//note: have to configure this ec2 instance storage into Amazon EFS.
+		8GB		
+			0x File systems -> edit
+					//cannot add file system before selecting subnet
+
+					4.1) Network settings -> Edit -> choose Subnet : eu-west-1a	
+
+			ox File Systems -> Edit		//see below file systems
+					a) EFS
+					b) FSx		
+
+
+			=> Add shared File System
+				//linked to our EFS  how linked? has a mount point : /mnt/efs/fs1					//Why Mmount point? links Ec2 instance to file system
+
+		automatically create and attach security groups
+
+		automatically mounts shared file system , how? attaches required user data scripts (earlier had to manually run script on instance /  create our own user script)
+																		//now done by EC2 console //helpful
+
+
+
+	5) no. of instance:1 
+
+	-> Launch Instance
+		-> view all instances
+
+
+  B.2) launch instance b
+
+
+	1) no key pair
+	2) eu-west-1b
+	3) select existing security group of launch-wizard2
+
+	Configure storage 
+	  0x - File systems -> Edit
+			a) EFS
+					b) FSx		
+
+
+			=> Add shared File System
+				//linked to our EFS  how linked? has a mount point : /mnt/efs/fs1					//Why Mmount point? links Ec2 instance to file system
+
+		automatically create and attach security groups
+
+		automatically mounts shared file system , how? attaches required user data scripts (earlier had to manually run script on instance /  create our own user script)
+																		//now done by EC2 console //helpful
+
+
+
+	=> Launch instance
+			
+
+
+ B.3)  //see both instances running
+
+	1) EFS console ->network
+
+			each AZ : has multiple security groups
+			//these securit groups were auto created by EC2 console for us + attached to EFS file system
+
+	2) Services -> Network & Security -> Security groups
+		//select your security group
+			
+			Inbound Rules
+
+					allows NFS on port 2049
+					-> Edit
+						source security group: sg-0521b4deede655ee4
+	
+							what special about this security group? attached to EC2 instance B
+						
+							Conclusion: EFS Ec2 instance B can access file system
+
+
+B.4) COnnect one instance
+		Instance A -> Connect 
+			EC2 instance connect
+				Connect
+
+		Instance B -> Connect 
+			EC2 instance connect
+				Connect
+
+
+
+B.5) Verify that shared filessystem
+
+	b.5.1) in  instance A (new tab):
+			/mnt/efs/fs1		//File system exists								//Why mount point? /mnt/efs/fs1	Endpoint that we use in/for both instances to connect to EFS
+			sudo su
+			# echo "hello world" > /mnt/efs/fs1/hello.txt
+			cat /mnt/efs/fs1/hello.txt
+
+		>hello world			//File got created into -> EFS File system from instance A  
+									where is this instance? eu-west-1a
+
+	b.5.2) in  instance B (new tab):
+			/mnt/efs/fs1		//File system exists
+			ls /mnt/efs/fs1
+		
+		>hello.txt 
+			cat /mnt/efs/fs1/hello.txt	
+		hello world
+
+
+
+CONCLUSION: EFS File system mounted as a network drive on both EC2 instance
+		both instances in different AZs
+		both instances share same EFS
+					
+	
+			
+----------------------------------------------------------------------------
+In end:
+
+a) termiante both EC2 instances
+select -> instance  state -> terminate instance
+
+b) EFS file system -> 
+Amazon EFS -> File systems ->
+Delete		//confirm EFS id
+
+
+c) security groups
+	delete extra security groups
+
+

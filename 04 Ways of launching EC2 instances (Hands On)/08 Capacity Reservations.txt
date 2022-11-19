@@ -1,0 +1,13 @@
+Ensure capacity is available within EC2 instance launch
+
+To make sure if you have enough m5.2x large available to you
+specify availability zone, tenancy quantity
+
+Can specify when the reservation ends manually
+
+
+THIS WILL GUARANTEE THAT INSTANCE WILL BE AVAILABLE TO YOU
+
+BUT
+Regardless,Whether or not we are launching our instance in this,
+we will have to pay for this reservation

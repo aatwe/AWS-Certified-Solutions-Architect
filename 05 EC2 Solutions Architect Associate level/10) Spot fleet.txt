@@ -1,0 +1,1 @@
+What is spot fleet? set of spot instances

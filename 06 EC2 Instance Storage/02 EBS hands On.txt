@@ -1,0 +1,96 @@
+//Check EBS Volume attached to instance
+
+a) Instance -> Storage -> root device name
+				 -> block device	: 8GB Volume attached
+					volume: in use , attached
+
+
+//How to access volume?
+a) Services -> Elastic Block Store -> Volume
+	8Gb  EBS visible
+
+//How to create second volume?
+b)  Services -> Elastic Block Store -> Volume
+	Create volume
+
+c) Volume type: gp2,gp3,...
+
+d) Size: 2 GB
+
+e) Availability zone: //same as EC2 instance
+		(find from Services -> Instances ->
+
+f) -> Create volume
+
+------Volume created -------------
+
+a) Select volume -> Action-> attach volume
+
+b) instance
+   Device name
+	Attach volume
+
+c) Now volume attached
+-------Instance has 2 volumes attached ------------
+
+//how to check
+Instances -> Storage -> EC2 console -> how many block devices
+	8GB
+	2GB
+
+
+//How to use block device? out of scope
+	//google attach and mount on EBS Volume
+
+-------------------------------------------------
+//Try creating volume for different AZ
+
+a) Volume -> Create volume ->
+	
+b) 2GB
+
+c) AZ = eu-west-1a	//different AZ than EC2
+
+Create volume
+
+d) Check volumes
+Services -> Elastic Block Store -> Volume
+
+2GB
+8GB
+2GB //select -> actions -> Attach volume -> //cannot find EC2 instance
+
+//Cannot attach to EC2 instance 
+
+
+//Proof: EBS volume are bound by AZ
+
+
+   //Select -> actions -> delte volume
+
+
+//Why cool? can request volumes / delete volumes in matter of seconds
+-----------------------------------------------------------------------
+
+What if we terminate our instance?
+a) Services -> Elastic Block Store -> Volume
+						delete on termination
+	8GB		---> 			Yes
+	2GB		--> 			NO
+
+//When and how is this yes?
+b) Launch instance => Configure storeage -> advanced -> EBS  volumes -> check delte on termination indicator for you EBS device
+
+
+
+//Test
+c)  Instances
+Select your instance -> Terminate Instance
+//check instances -> removed
+
+
+d) Services -> Elastic Block Store -> Volume
+	Refresh
+	terminates after a while	 
+
+	2GB

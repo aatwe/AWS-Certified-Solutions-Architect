@@ -1,0 +1,102 @@
+Services -> Instances -> Running Instance --> Details:
+
+
+	Public IPv4 address
+
+
+a) ssh into our instance using //public IP
+	ssh -i EC2Tutorial.pem ec2-user@3.129.218.15
+							-----------
+							public ip
+
+	//logged in
+
+> ec2-user@ip-172-31-11-234		//can see your private ip
+----------    ------------		
+instance  	    private ip
+hostname
+
+b) Ctrl+C -> logout
+
+c) ssh into our instance using Private IPv4	 3.129.218.15
+			//can find it in details now since we connected once
+
+
+ssh -i EC2Tutorial.pem ec2-user@3.129.218.15
+						-----------
+						  private IP
+
+//Does not work
+
+why cant connect to ec2 using private ip 3.129.218.15 ?
+	a) it belongs to our private network
+	b) we are not connected to private network of aws
+	
+	c) where we connected then? Internet
+
+	d) Solution: use public IP to access AWS from public network
+
+---------------------------------------------------------------
+How public iP changes after starting and stopping instance?	 
+
+Check instance behaviour
+a) Stop instance --> copy public IP
+
+b) Start instance 	//this is not rebooting instance
+
+c) check public ip in details
+	//public ip changed
+	try ssh with new ip -> works
+
+----------------------------------------------------------------
+
+
+How to not let public ip change after starting and stopping?
+elastic ip
+
+a) Elastic IP
+	Details -> Elastic IP Address : null
+
+
+//How to allocate elastic ip to our private ip
+b) Services -> Network & Security -> Elastic IPs
+	
+	b.1) Amazon's pool of IPv4 Addresses
+			
+	b.2) Allocate
+
+		//New IPv4 we own, created  /18.216.64.85
+		//if we dont attach elastic IP immediately -> charged
+
+	b.3) Actions -> Associate Elastic IP Address
+		b.3.1) attach to what? Instance / Network interface
+				
+		b.3.2) select running instance
+			
+		b.3.3) Select what Private IP to associate Elastic IP
+
+	b.4) Refresh EC2 instance
+			//see our public ip 	18.216.64.85
+
+
+	b.5) Try to ssh again with elastic public ip
+		ssh -i EC2Tutorial.pem ec2-user@18.216.64.85
+
+	b.6) what if we stop isntance?
+			//still public elastic ipv4 visible
+
+	b.7) start again
+			//still public elastic ipv4 visible
+
+
+//How to disassociate elastic ip?
+a)  Services -> Network & Security -> Elastic IPs
+	
+b) Actions -> Disassociate Elastic IP Address
+		
+
+c) Actions -> Release elastic IP
+//test again -> new ip every time we start and stop
+
+
+d) Terminate instance in end

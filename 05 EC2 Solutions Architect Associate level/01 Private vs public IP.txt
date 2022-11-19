@@ -1,0 +1,93 @@
+Networking:  
+	IPV4
+		1.160.10.240	//4 no. + 3 dot
+
+	IPV6
+		3ffe:1900:4545:3:200:f8ff:fe21:67cf	//long string
+	
+
+What we use? IPv4
+	how many addresses? 3.7 billion (2^32)
+	each no. 0 - 255
+	[0-255][0-255][0-255][0-255][0-255]	
+
+Why IPv6? solves problems for IOT
+
+
+
+How related to webserver?
+Public Network : Its own IP Address
+	How they talk to each other?
+a)    webserver/EC2 instance = public = IP :79.216.59.75
+
+b)    Server   		    = public = IP :211.139.37.43
+
+
+Private Network(Company A): Its own IP private IP : 192.168.0.1/22
+	How they talk to each other? pvt IP
+
+c) 	Private Computer1  
+
+	//All computers can talk using pvt IPs
+
+d) 	Private Computer2      
+
+Q1) how private network (Company A) gets access to public network servers(EC2 etc)?
+
+Public Internet Gateway (149.140.72.10)
+
+
+Q2) How private network (company B) gets access to public network?
+
+Public Internet Gateway (192.168.0.1/22)
+
+
+
+Conclusion:
+1) computer has private IP
+2) Router has public IP
+connected to internet via router
+
+public IP(My router): can find machine on internet
+				every machine : unique individual ip
+				can geo locate	
+
+private IP		    :can find machine only in pvt nw
+				unique ip in pvt nw
+				2 nw can have same ip
+
+	How pvt nw machine connect to www? internet gateway
+
+
+
+Elastic IP: if start and stop ec2 instance
+			public ip changes
+	Solution: Elastic IP
+	
+
+What use? if a software fails(instance on / off) on an instance --> quickly move it to another
+
+
+
+how many elastic ip allowed in aws account? 5
+
+should u use elastic ip? NO, avoid
+	why? shows poor architectural decision
+		
+what to use instead of elastic ip?
+	random public IP and register a DNS OR Load balancer
+								//more controllable + scalable
+				
+----------------------------------------------------------------------------------------------
+a) what ec2 machine has by default? pvt IP  //why pvt? internal AWS network
+		 & public IP				//for www
+
+b) do SSH into machines
+	//cant use pvt ip afterwards ,why? not on same network		
+			how to use pvt ip still if want to? Use VPN
+ 
+	//can only use public IP 	//no VPN
+
+c) if start and stop machine
+		//public ip changes
+

@@ -1,0 +1,71 @@
+1) What happens to data on instance on stop and start?
+
+	STOP: Data on disk(EBS) is intact for next START
+
+	TERMINATE : volume setup to be destroyed --> termianted
+			 volume not setup to be des   --> kept
+
+
+
+
+	START: OS Boots -> EC2 User Data script is run
+		 OS Boot complete
+		 Appplication starts, caches warm 
+
+
+	
+Why Hibernet? 
+	if Hibernet --> in-memory state is preserved
+		which causes:
+			instance boot fast,OS frozen
+
+
+	What happens underhood in hibernet?
+		ram state data -> written in root data on disk(EBS) volume
+			//prerequisites:
+				root EBS should be encrypted
+				root EBS should have space to contain RAM
+
+
+-------------------------------------------------------------
+
+
+a) Scenario: EC2 instance running, data in RAM
+
+b) start hibernation process
+
+c) instance --> stopping state
+   ram dump --> EBS volume
+   
+d) EC2 instance shuts down
+	//RAM disappears
+
+e) EBS volume still contains? RAM dump
+
+f) EC2 instance starts
+   ram loaded from  EBS volume  --> to EC2 instance memory 
+
+g) All works as if EC2 network didnt stop
+
+
+
+Why Hibernate?
+	a) Long running processes	//never stop them
+
+	b) Save RAM state
+
+	c) reboot/boot fast	//want services to keep running even if hibernete instance
+
+
+
+EC2 Hibernate supported by?
+Instance families: C3,C4,C5,I3,M3,M4,R3,R4,T2,T3...
+RAM Size : <150 GB
+Instance Size: not supported for bare metal instances
+OS Supported: Amazon Linux2, Linux AMI,ubuntu, CentOS, Windows
+
+Root volume : hsould be EBS,encrypted, not instance store, large enough to contain RAM (dump)
+
+Available forinstances ? On Demand, Reserved, Spot isntances
+
+what hibernation period? <=60 days

@@ -1,0 +1,27 @@
+How to clean up?
+
+//File system
+a) Actions -> Delete file system  //copy id
+
+//Instances
+Serviecs -> Instances
+b) instances -> terminate running EC2 instances
+
+
+//Volumes
+//Elastic Block store -> Volumes
+c) Volumes   -> terminate any that is avail -> rightlcick -> delete
+
+
+//Snapshots
+//Serviecs -> Elastic Block Store -> Snapshots
+select snapshot --> delete every snapshot we have
+
+
+//Network & Security
+//Services -> Network and Security -> Security groups
+//delete all except default (right click)
+		//Note: security groups will be deleted only after instances deleted
+
+
+

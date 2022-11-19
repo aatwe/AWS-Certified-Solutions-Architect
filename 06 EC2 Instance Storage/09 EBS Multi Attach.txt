@@ -1,0 +1,29 @@
+1)What is EBS multi attach?
+ attch same EBS volume to multiple EC2 instances in same AZ
+
+
+AZ1									
+  EC2							Ec2				  EC2
+
+	x <---io2 with multi attach --->    	X				   X
+
+
+//only works for IO1 and io2 family of EBS volumes
+
+Q1) Does all instance have read write permission? Yes
+	each instance
+		all can read at same time
+
+
+Q2)	Higher application availability: clustered Linux Application
+								using Teradata
+
+	Concur rights operation managment Application
+
+
+What limitation?
+	a) Same AZ
+
+$$note:	b) 16 EC2 instances at a time --> attaching the same
+
+	c) Cluster aware file system : DIfferent than XFS,EX4 etc 
